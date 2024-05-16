@@ -1,3 +1,4 @@
+# modules
 node_modules
 
 # Environment variables
@@ -6,3 +7,6 @@ node_modules
 # Logs
 logs
 *.log
+
+# scripts 
+token.js
