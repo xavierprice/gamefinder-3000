@@ -1,0 +1,86 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  /* Colors */
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-background: #f8f9fa;
+  --color-button: #007bff;
+  --color-button-hover: #0056b3;
+
+  /* Font Sizes */
+  --font-size-base: 16px;
+  --font-size-small: 14px;
+  --font-size-large: 18px;
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.75rem;
+
+  /* Padding */
+  --padding-half: 0.5rem;
+  --padding-small: 1.5rem;
+  --padding-medium: 3rem;
+  --padding-large: 5rem;
+
+  /* Border Radius */
+  --border-radius-small: 1.3rem;
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
+}
+
+main {
+  display: flex;
+  height: 100%;
+}
+
+.filter-container {
+  width: 250px;
+  padding: var(--padding-small);
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-small);
+}
+
+.search-bar {
+  width: 100%;
+  padding: var(--padding-half);
+}
+
+.filter-radios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-small);
+}
+
+.filter-radios label {
+  cursor: pointer;
+  display: flex;
+  gap: var(--padding-half);
+}
+
+.submit-button {
+  font-size: var(--font-size-large);
+  padding: var(--padding-half);
+  background-color: var(--color-button);
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: var(--color-button-hover);
+}

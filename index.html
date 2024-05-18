@@ -8,6 +8,30 @@
     <title>Dashboard</title>
   </head>
   <body>
-
+    <main>
+      <section class="filter-container">
+        <input type="text" class="search-bar" placeholder="Search games..." />
+        <div class="filter-radios">
+          <label
+            ><input type="radio" name="genre" value="all" checked /> All</label
+          >
+          <label
+            ><input type="radio" name="genre" value="action" /> Action</label
+          >
+          <label
+            ><input type="radio" name="genre" value="adventure" />
+            Adventure</label
+          >
+          <label><input type="radio" name="genre" value="rpg" /> RPG</label>
+          <label
+            ><input type="radio" name="genre" value="sports" /> Sports</label
+          >
+        </div>
+        <button class="submit-button">List games</button>
+      </section>
+      <section class="content">
+        <ul></ul>
+      </section>
+    </main>
   </body>
 </html>
