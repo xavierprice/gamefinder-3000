@@ -12,6 +12,10 @@ html {
   font-family: Arial, sans-serif;
 }
 
+li {
+  list-style: none;
+}
+
 :root {
   /* Colors */
   --color-primary: #007bff;
@@ -35,16 +39,17 @@ html {
   --padding-medium: 3rem;
   --padding-large: 5rem;
 
-  /* Border Radius */
-  --border-radius-small: 1.3rem;
-  --border-radius-medium: 8px;
-  --border-radius-large: 12px;
+  /* Card Styling */
+  --border-radius-small: 8px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 main {
   display: flex;
   height: 100%;
 }
+
+/* Filter Section */
 
 .filter-container {
   width: 250px;
@@ -83,4 +88,35 @@ main {
 
 .submit-button:hover {
   background-color: var(--color-button-hover);
+}
+
+/* Content Seciton  */
+.content {
+  padding: var(--padding-medium);
+}
+
+.content ul {
+ display: flex;
+ flex-wrap: wrap;
+ gap: var(--padding-medium);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-half);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--box-shadow);
+  padding: var(--padding-small);
+}
+
+.card-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.card-rating {
+  font-size: var(--font-size-base);
+  color: var(--color-secondary);
 }
