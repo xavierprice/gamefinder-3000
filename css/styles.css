@@ -65,13 +65,13 @@ main {
   padding: var(--padding-half);
 }
 
-.filter-radios {
+.filter-genres {
   display: flex;
   flex-direction: column;
   gap: var(--padding-small);
 }
 
-.filter-radios label {
+.filter-genres label {
   cursor: pointer;
   display: flex;
   gap: var(--padding-half);
@@ -96,9 +96,9 @@ main {
 }
 
 .content ul {
- display: flex;
- flex-wrap: wrap;
- gap: var(--padding-medium);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--padding-medium);
 }
 
 .card {

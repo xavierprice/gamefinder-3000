@@ -10,8 +10,10 @@
   <body>
     <main>
       <section class="filter-container">
+        <!-- Search Bar -->
         <input type="text" class="search-bar" placeholder="Search games..." />
-        <div class="filter-radios">
+        <!-- Genre Filter -->
+        <div class="filter-genres">
           <label
             ><input type="radio" name="genre" value="all" checked /> All</label
           >
@@ -27,6 +29,40 @@
             ><input type="radio" name="genre" value="sports" /> Sports</label
           >
         </div>
+        <!-- Rating Filter -->
+        <div class="filter-rating">
+          <label for="rating">Rating:</label>
+          <select id="rating" name="rating">
+            <option value="all" selected>All</option>
+            <option value="80">80+</option>
+            <option value="70">70+</option>
+            <option value="60">60+</option>
+            <option value="50">50+</option>
+          </select>
+        </div>
+        <!-- Platform Filter -->
+        <div class="filter-platforms">
+          <label for="platforms">Platforms:</label>
+          <select id="platforms" name="platforms">
+            <option value="all" selected>All</option>
+            <option value="pc">PC</option>
+            <option value="playstation">PlayStation</option>
+            <option value="xbox">Xbox</option>
+            <option value="nintendo">Nintendo</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </div>
+        <!-- Game Mode Filter -->
+        <div class="filter-game-modes">
+          <label for="game-modes">Game Modes:</label>
+          <select id="game-modes" name="game-modes">
+            <option value="all" selected>All</option>
+            <option value="singleplayer">Singleplayer</option>
+            <option value="multiplayer">Multiplayer</option>
+            <option value="coop">Co-Op</option>
+            <option value="battle_royale">Battle Royale</option>
+          </select>
+        </div>
         <button class="submit-button">List games</button>
       </section>
       <section class="content">
@@ -35,10 +71,11 @@
             <h2 class="card-title">Game Title</h2>
             <p class="card-description">Description of the game goes here.</p>
             <img src="game_image.jpg" alt="Game Image" class="card-image" />
-            <div class="card-rating">Rating: 4.5</div>
+ard-rating">Rating: 4.5</div>
           </li> -->
         </ul>
       </section>
     </main>
+    <script src="/js/main.js"></script>
   </body>
 </html>
