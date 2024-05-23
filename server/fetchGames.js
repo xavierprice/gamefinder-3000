@@ -1,10 +1,14 @@
 //use require for server-side environment
-const getToken = require("./getToken");
 //use axios instead of fetch, as fetch is not available in Node.js.
 const axios = require("axios");
-require("dotenv").config();
+
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+const getToken = require(path.resolve(__dirname, "./getToken.js"));
+
 //process clientId here for easier reasability
 const clientId = process.env.CLIENT_ID;
+
 // add parameters from user to fetch games
 async function fetchGames(search, rating) {
   try {
