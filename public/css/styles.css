@@ -60,7 +60,7 @@ main {
   gap: var(--padding-small);
 }
 
-.search-bar {
+#search-bar {
   width: 100%;
   padding: var(--padding-half);
 }
@@ -77,7 +77,7 @@ main {
   gap: var(--padding-half);
 }
 
-.submit-button {
+#submit-button {
   font-size: var(--font-size-large);
   padding: var(--padding-half);
   background-color: var(--color-button);
@@ -86,7 +86,7 @@ main {
   cursor: pointer;
 }
 
-.submit-button:hover {
+#submit-button:hover {
   background-color: var(--color-button-hover);
 }
 

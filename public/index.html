@@ -11,24 +11,7 @@
     <main>
       <section class="filter-container">
         <!-- Search Bar -->
-        <input type="text" class="search-bar" placeholder="Search games..." />
-        <!-- Genre Filter -->
-        <div class="filter-genres">
-          <label
-            ><input type="radio" name="genre" value="all" checked /> All</label
-          >
-          <label
-            ><input type="radio" name="genre" value="action" /> Action</label
-          >
-          <label
-            ><input type="radio" name="genre" value="adventure" />
-            Adventure</label
-          >
-          <label><input type="radio" name="genre" value="rpg" /> RPG</label>
-          <label
-            ><input type="radio" name="genre" value="sports" /> Sports</label
-          >
-        </div>
+        <input type="text" id="search-bar" placeholder="Search games..." />
         <!-- Rating Filter -->
         <div class="filter-rating">
           <label for="rating">Rating:</label>
@@ -40,33 +23,10 @@
             <option value="50">50+</option>
           </select>
         </div>
-        <!-- Platform Filter -->
-        <div class="filter-platforms">
-          <label for="platforms">Platforms:</label>
-          <select id="platforms" name="platforms">
-            <option value="all" selected>All</option>
-            <option value="pc">PC</option>
-            <option value="playstation">PlayStation</option>
-            <option value="xbox">Xbox</option>
-            <option value="nintendo">Nintendo</option>
-            <option value="mobile">Mobile</option>
-          </select>
-        </div>
-        <!-- Game Mode Filter -->
-        <div class="filter-game-modes">
-          <label for="game-modes">Game Modes:</label>
-          <select id="game-modes" name="game-modes">
-            <option value="all" selected>All</option>
-            <option value="singleplayer">Singleplayer</option>
-            <option value="multiplayer">Multiplayer</option>
-            <option value="coop">Co-Op</option>
-            <option value="battle_royale">Battle Royale</option>
-          </select>
-        </div>
-        <button class="submit-button">List games</button>
+        <button id="submit-button">List games</button>
       </section>
       <section class="content">
-        <ul>
+        <ul id="games-list">
           <!-- <li class="card">
             <h2 class="card-title">Game Title</h2>
             <p class="card-description">Description of the game goes here.</p>
@@ -76,6 +36,6 @@ ard-rating">Rating: 4.5</div>
         </ul>
       </section>
     </main>
-    <script src="/js/main.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
