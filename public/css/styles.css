@@ -60,21 +60,45 @@ main {
   gap: var(--padding-small);
 }
 
+/* Select menu classes */
+.filter-genre #genre-select,
+.filter-rating #rating-select,
+.filter-platform #platform-select,
+.filter-game-mode #game-mode-select {
+  cursor: pointer;
+}
+
 #search-bar {
   width: 100%;
   padding: var(--padding-half);
 }
 
-.filter-genres {
+/* Column filter styling */
+.filter-genre,
+.filter-game-mode {
   display: flex;
   flex-direction: column;
-  gap: var(--padding-small);
+  gap: var(--padding-half);
+}
+.filter-genre #genre-select,
+.filter-game-mode #game-mode-select {
+  padding: var(--padding-half);
 }
 
-.filter-genres label {
-  cursor: pointer;
+/* Row filter styling */
+.filter-rating,
+.filter-platform {
   display: flex;
   gap: var(--padding-half);
+}
+.filter-platform #platform-select,
+.filter-rating #rating-select {
+  flex: 1;
+  padding: var(--padding-half);
+}
+.filter-rating label,
+.filter-platform label {
+  align-self: center;
 }
 
 #submit-button {
@@ -90,11 +114,10 @@ main {
   background-color: var(--color-button-hover);
 }
 
-/* Content Seciton  */
+/* Content Section  */
 .content {
   padding: var(--padding-medium);
 }
-
 .content ul {
   display: flex;
   flex-wrap: wrap;
@@ -109,13 +132,11 @@ main {
   box-shadow: var(--box-shadow);
   padding: var(--padding-small);
 }
-
 .card-image {
   width: 100%;
   max-width: 300px;
   height: auto;
 }
-
 .card-rating {
   font-size: var(--font-size-base);
   color: var(--color-secondary);

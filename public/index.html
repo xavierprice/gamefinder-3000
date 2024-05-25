@@ -12,15 +12,68 @@
       <section class="filter-container">
         <!-- Search Bar -->
         <input type="text" id="search-bar" placeholder="Search games..." />
+        <!-- Genre Filter -->
+        <div class="filter-genre">
+          <label for="genre-select">Select Genre:</label>
+          <select id="genre-select" name="genre">
+            <option value="36">MOBA</option>
+            <option value="2">Point-and-click</option>
+            <option value="4">Fighting</option>
+            <option value="5">Shooter</option>
+            <option value="7">Music</option>
+            <option value="8">Platform</option>
+            <option value="9">Puzzle</option>
+            <option value="10">Racing</option>
+            <option value="11">Real Time Strategy (RTS)</option>
+            <option value="12">Role-playing (RPG)</option>
+            <option value="13">Simulator</option>
+            <option value="14">Sport</option>
+            <option value="15">Strategy</option>
+            <option value="16">Turn-based strategy (TBS)</option>
+            <option value="24">Tactical</option>
+            <option value="25">Hack and slash/Beat 'em up</option>
+            <option value="26">Quiz/Trivia</option>
+            <option value="30">Pinball</option>
+            <option value="31">Adventure</option>
+            <option value="32">Indie</option>
+            <option value="33">Arcade</option>
+            <option value="34">Visual Novel</option>
+            <option value="35">Card & Board Game</option>
+          </select>
+        </div>
+
         <!-- Rating Filter -->
         <div class="filter-rating">
           <label for="rating">Rating:</label>
-          <select id="rating" name="rating">
+          <select id="rating-select" name="rating">
             <option value="all" selected>All</option>
             <option value="80">80+</option>
             <option value="70">70+</option>
             <option value="60">60+</option>
             <option value="50">50+</option>
+          </select>
+        </div>
+        <!-- Platform Filter -->
+        <div class="filter-platform">
+          <label for="platform">Platforms:</label>
+          <select id="platform-select" name="platforms">
+            <option value="all" selected>All</option>
+            <option value="pc">PC</option>
+            <option value="playstation">PlayStation</option>
+            <option value="xbox">Xbox</option>
+            <option value="nintendo">Nintendo</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </div>
+        <!-- Game Mode Filter -->
+        <div class="filter-game-mode">
+          <label for="game-modes">Game Modes:</label>
+          <select id="game-mode-select" name="game-modes">
+            <option value="all" selected>All</option>
+            <option value="singleplayer">Singleplayer</option>
+            <option value="multiplayer">Multiplayer</option>
+            <option value="coop">Co-Op</option>
+            <option value="battle_royale">Battle Royale</option>
           </select>
         </div>
         <button id="submit-button">List games</button>
