@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   submitButton.addEventListener("click", async () => {
     try {
       const searchValue = document.getElementById("search-bar").value;
-      let ratingValue = document.getElementById("rating").value;
+      let ratingValue = document.getElementById("rating-select").value;
 
       // Construct object to pass through to server
       let data = { search: searchValue };
