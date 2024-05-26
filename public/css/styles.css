@@ -75,29 +75,28 @@ main {
 
 /* Column filter styling */
 .filter-genre,
-.filter-game-mode {
+.filter-game-mode,
+.filter-platform {
   display: flex;
   flex-direction: column;
   gap: var(--padding-half);
 }
 .filter-genre #genre-select,
+.filter-platform #platform-select,
 .filter-game-mode #game-mode-select {
   padding: var(--padding-half);
 }
 
 /* Row filter styling */
-.filter-rating,
-.filter-platform {
+.filter-rating {
   display: flex;
   gap: var(--padding-half);
 }
-.filter-platform #platform-select,
 .filter-rating #rating-select {
   flex: 1;
   padding: var(--padding-half);
 }
-.filter-rating label,
-.filter-platform label {
+.filter-rating label {
   align-self: center;
 }
 

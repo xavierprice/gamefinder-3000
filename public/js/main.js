@@ -5,13 +5,25 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const searchValue = document.getElementById("search-bar").value;
       let ratingValue = document.getElementById("rating-select").value;
+      let genreValue = document.getElementById("genre-select").value;
+      let platformValue = document.getElementById("platform-select").value;
+      let gameModeValue = document.getElementById("game-mode-select").value;
 
       // Construct object to pass through to server
       let data = { search: searchValue };
 
-      // Parse rating
-      if (ratingValue !== "all") {
+      // Parse values if selected
+      if (ratingValue !== "any") {
         data.rating = parseInt(ratingValue);
+      }
+      if (genreValue !== "any") {
+        data.genre = parseInt(genreValue);
+      }
+      if (platformValue !== "any") {
+        data.platform = parseInt(platformValue);
+      }
+      if (gameModeValue !== "any") {
+        data.gameMode = parseInt(gameModeValue);
       }
 
       // Send client request to server
