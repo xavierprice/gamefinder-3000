@@ -9,6 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
       let platformValue = document.getElementById("platform-select").value;
       let gameModeValue = document.getElementById("game-mode-select").value;
 
+      const showMoreBtn = document.querySelector(".show-more");
+      const moreText = document.querySelector(".more-text");
+      showMoreBtn.addEventListener("click", function () {
+        if (moreText.style.display === "none") {
+          moreText.style.display = "inline";
+          showMoreBtn.innerHTML = "Show Less ▲";
+        } else {
+          moreText.style.display = "none";
+          showMoreBtn.innerHTML = "Show More ▼";
+        }
+      });
+
       // Construct object to pass through to server
       let data = { search: searchValue };
 
@@ -38,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (response.ok) {
         const result = await response.json();
         console.log("Success", result);
+        displayGames(result);
       } else {
         console.error("Request failed");
       }

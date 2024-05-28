@@ -10,7 +10,7 @@ async function fetchGames(search, rating, genre, platform, gameMode) {
     const accessToken = await getToken();
 
     let query = `
-      fields name, total_rating, genres, platforms, game_modes;
+      fields name, total_rating, genres, platforms, game_modes, cover.url;
     `;
     // Add values to query if present in data
     if (search) {
