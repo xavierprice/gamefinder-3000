@@ -146,28 +146,18 @@ main {
 .header-data {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   gap: var(--padding-half);
-}
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: var(--padding-half);
-}
-.header-bottom {
-  display: flex;
-  justify-content: space-between;
 }
 .platform,
 .genre,
 .game-mode {
-  display: flex;
-  flex-wrap: wrap;
   gap: var(--padding-half);
   color: var(--color-button);
   font-size: var(--font-size-base);
 }
 .rating {
+  text-align: right;
   color: green;
 }
 /* Main */
@@ -179,6 +169,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: var(--padding-half);
 }
 .card-cover-art {
   width: 100%;
@@ -204,7 +195,16 @@ main {
 /* Footer */
 footer {
   display: flex;
-  justify-content: space-between;
-  flex: 1;
+  flex-direction: column;
+  gap: var(--padding-half);
   color: var(--color-secondary);
+}
+.footer-top,
+.footer-end {
+  display: flex;
+  justify-content: space-between;
+}
+.game-mode {
+  justify-content: flex-end;
+  margin-left: auto;
 }

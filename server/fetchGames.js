@@ -8,9 +8,9 @@ const clientId = process.env.CLIENT_ID;
 async function fetchGames(search, rating, genre, platform, gameMode) {
   try {
     const accessToken = await getToken();
-
+// Fetch properties of fields used in HTML
     let query = `
-      fields name, total_rating, genres, platforms, game_modes, cover.url;
+      fields name, total_rating, genres.name, platforms.name, game_modes.name, cover.url, summary;
     `;
     // Add values to query if present in data
     if (search) {
