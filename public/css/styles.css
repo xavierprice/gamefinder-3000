@@ -8,6 +8,7 @@
 
 body,
 html {
+  background-color: gray;
   height: 100%;
   font-family: Arial, sans-serif;
 }
@@ -45,20 +46,19 @@ li {
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-main {
+.main-container {
   display: flex;
   height: 100%;
 }
 
 /* Filter Section */
-
 .filter-container {
-  width: 250px;
+  position: fixed;
+  flex: 1;
+  height: 100%;
+  min-width: 250px;
   padding: var(--padding-small);
   background-color: var(--color-background);
-  display: flex;
-  flex-direction: column;
-  gap: var(--padding-small);
 }
 
 /* Select menu classes */
@@ -72,6 +72,22 @@ main {
 #search-bar {
   width: 100%;
   padding: var(--padding-half);
+  border: 1px solid gray;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-small);
+}
+
+/* Split filters into three colomns for tablet/mobile */
+.filter-start,
+.filter-middle,
+.filter-end {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-small);
 }
 
 /* Column filter styling */
@@ -82,6 +98,7 @@ main {
   flex-direction: column;
   gap: var(--padding-half);
 }
+
 .filter-genre #genre-select,
 .filter-platform #platform-select,
 .filter-game-mode #game-mode-select {
@@ -93,10 +110,12 @@ main {
   display: flex;
   gap: var(--padding-half);
 }
+
 .filter-rating #rating-select {
   flex: 1;
   padding: var(--padding-half);
 }
+
 .filter-rating label {
   align-self: center;
 }
@@ -116,39 +135,55 @@ main {
 
 /* Content Section  */
 .content {
+  margin-left: calc(250px + var(--padding-medium));
+  flex: 4;
   padding: var(--padding-medium);
 }
+
 .content ul {
   display: flex;
   flex-wrap: wrap;
 }
+
+.content ul#games-list {
+  gap: var(--padding-small);
+  padding-bottom: var(--padding-medium);
+}
+
 .card li {
   font-size: var(--font-size-h5);
   font-weight: bold;
 }
+
 /* Card-style */
 .card {
+  height: 100%;
+  background-color: var(--color-background);
+  flex: 1 1 40%;
   display: flex;
   flex-direction: column;
-  width: 500px;
+  min-width: 300px;
   height: auto;
   gap: var(--padding-small);
   border-radius: var(--border-radius-small);
   box-shadow: var(--box-shadow);
   padding: var(--padding-small);
 }
+
 /* Header  */
 .title {
   text-align: center;
   font-size: var(--font-size-h2);
   padding-bottom: var(--padding-half);
 }
+
 .header-data {
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: var(--padding-half);
 }
+
 .platform,
 .genre,
 .game-mode {
@@ -156,29 +191,46 @@ main {
   color: var(--color-button);
   font-size: var(--font-size-base);
 }
+
+.platform {
+  flex: 3;
+}
+
 .rating {
+  flex: 1;
+  min-width: max-content;
   text-align: right;
+  /* Adjust color depending on what rating */
   color: green;
 }
-/* Main */
-main {
+
+/* Card main */
+.card-main {
+  flex: 1;
   display: flex;
+  flex-wrap: wrap;
   gap: var(--padding-small);
 }
+
 .card-summary {
+  min-width: 150px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--padding-half);
+  gap: var(--padding-small);
 }
+
 .card-cover-art {
   width: 100%;
   max-width: 150px;
   height: 150px;
 }
+
 .more-text {
   display: none;
 }
+
 .show-more {
   align-self: flex-end;
   background: none;
@@ -186,25 +238,160 @@ main {
   color: var(--color-button);
   cursor: pointer;
 }
+
 .show-more:hover {
   color: var(--color-button);
 }
-.show-more:focus {
-  outline: none;
-}
+
 /* Footer */
 footer {
+  min-height: 75px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: var(--padding-half);
   color: var(--color-secondary);
 }
+
 .footer-top,
 .footer-end {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
+
+.footer-end {
+  gap: var(--padding-half);
+  margin-top: auto;
+}
+
+.genre,
+.game-mode,
+.date-released,
+.data-update {
+  flex: 1;
+}
+
 .game-mode {
+  text-align: right;
   justify-content: flex-end;
-  margin-left: auto;
+}
+
+.date-released {
+  min-width: 150px;
+}
+
+.data-updated {
+  min-width: auto;
+  text-align: right;
+}
+@media (max-width: 768px) {
+  /* Filter container  */
+  .filter-container {
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    border-bottom: solid 1px black;
+  }
+
+  /* Align search bar with rating filter */
+  #search-bar {
+    height: 36px;
+    margin-top: calc(18px + var(--padding-half));
+  }
+
+  .filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--padding-small);
+    flex: 1;
+  }
+
+  .filter-start,
+  .filter-middle,
+  .filter-end {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .filters .filter-start {
+    justify-content: initial;
+  }
+
+  .filter-rating {
+    flex-direction: column;
+  }
+
+  .filter-rating label {
+    align-self: flex-start;
+  }
+
+  /* Remove margin for filter layout */
+  .content {
+    margin-left: 0;
+  }
+
+  /* Card */
+  .card {
+    min-width: 400px;
+  }
+
+  /* Card main */
+  .card-main {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .card-summary {
+    min-width: 100px;
+  }
+}
+@media (max-width: 498px) {
+  .content {
+    padding: var(--padding-small);
+  }
+
+  /* Card */
+  .card {
+    min-width: 250px;
+  }
+
+  /* Header */
+  .header-data {
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+  }
+
+  .platform,
+  .rating,
+  .date-released,
+  .data-updated,
+  .genre,
+  .game-mode {
+    justify-content: center;
+    text-align: center;
+    min-width: 100%;
+  }
+
+  /* Card main */
+  .card-summary {
+    min-width: 175px;
+    /* flex-wrap: wrap; */
+  }
+
+  /* Footer */
+  footer {
+    gap: var(--padding-small);
+  }
+
+  .footer-top {
+    gap: var(--padding-half);
+    flex-wrap: wrap;
+  }
+
+  .footer-end {
+    flex-wrap: wrap;
+  }
 }

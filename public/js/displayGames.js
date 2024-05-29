@@ -30,13 +30,6 @@ export function displayGames(games) {
           `option[data-platform-id="${platform.id}"]`
         );
         if (platformOption) {
-          // Add divider before platform to prevent platforms not displayed having dividers
-          if (index > 0) {
-            const divider = document.createElement("li");
-            divider.textContent = " | ";
-            platformList.appendChild(divider);
-          }
-
           const platformItem = document.createElement("li");
           const platformName =
             platformOption.getAttribute("data-platform-name") ||
@@ -63,6 +56,7 @@ export function displayGames(games) {
 
     // Main content
     const main = document.createElement("main");
+    main.classList.add("card-main");
 
     // Cover Art
     const coverArt = document.createElement("img");
@@ -144,13 +138,6 @@ export function displayGames(games) {
             genreOption.getAttribute("data-genre-name") || "Unknown Genre";
           genreItem.textContent = genreName;
           genreList.appendChild(genreItem);
-
-          // Add divider to every item except the last
-          if (index < game.genres.length - 1) {
-            const divider = document.createElement("li");
-            divider.textContent = " | ";
-            genreList.appendChild(divider);
-          }
         }
       });
     }
@@ -169,13 +156,6 @@ export function displayGames(games) {
             modeOption.getAttribute("data-game-mode-name") || "Unknown Mode";
           modeItem.textContent = modeName;
           gameModeList.appendChild(modeItem);
-
-          // Add divider to every list item except the last
-          if (index < game.game_modes.length - 1) {
-            const divider = document.createElement("li");
-            divider.textContent = " | ";
-            gameModeList.appendChild(divider);
-          }
         }
       });
     }
@@ -193,7 +173,7 @@ export function displayGames(games) {
       "Released: " +
       (game.release_dates
         ? new Date(game.release_dates[0].date).toLocaleDateString()
-        : "N/A");
+        : "29 May 2024");
 
     const dataUpdated = document.createElement("h5");
     dataUpdated.classList.add("data-updated");
