@@ -8,7 +8,7 @@
 
 body,
 html {
-  background-color: gray;
+  background-color: var(--color-background);
   height: 100%;
   font-family: Arial, sans-serif;
 }
@@ -19,13 +19,18 @@ li {
 
 :root {
   /* Colors */
-  --color-primary: #007bff;
-  --color-secondary: #6c757d;
+  --color-primary: #36454F;
+  --color-secondary: #0e4b75;
+
+  --color-filters: #c4d7e7;
+  --color-card: #ffffff;
+  --color-background: #e9ecef;
+
+  --color-button: #0582ca;
+  --color-button-hover: #005688;
+
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-background: #f8f9fa;
-  --color-button: #007bff;
-  --color-button-hover: #0056b3;
 
   /* Font Sizes */
   --font-size-base: 16px;
@@ -46,6 +51,18 @@ li {
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.filters-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-small);
+  padding: var(--padding-small);
+}
+
+h1 {
+  color: var(--color-primary);
+  text-align: center;
+}
+
 .main-container {
   display: flex;
   height: 100%;
@@ -57,8 +74,7 @@ li {
   flex: 1;
   height: 100%;
   min-width: 250px;
-  padding: var(--padding-small);
-  background-color: darkgray;
+  background-color: var(--color-filters);
 }
 
 /* Styles for the toggle button tab */
@@ -198,7 +214,7 @@ li {
 /* Card-style */
 .card {
   height: 100%;
-  background-color: var(--color-background);
+  background-color: var(--color-card);
   flex: 1 1 40%;
   display: flex;
   flex-direction: column;
@@ -212,6 +228,7 @@ li {
 
 /* Header  */
 .title {
+  color: var(--color-primary);
   text-align: center;
   font-size: var(--font-size-h2);
   padding-bottom: var(--padding-half);
@@ -228,7 +245,7 @@ li {
 .genre,
 .game-mode {
   gap: var(--padding-half);
-  color: var(--color-button);
+  color: var(--color-secondary);
   font-size: var(--font-size-base);
 }
 
@@ -326,9 +343,13 @@ footer {
   text-align: right;
 }
 @media (max-width: 768px) {
+
+  h1 {
+    padding-top: var(--padding-small);
+  }
+
   /* Filter container  */
   .filter-container {
-    padding: 0;
     flex-direction: row;
     height: auto;
     width: 100%;
@@ -339,6 +360,7 @@ footer {
   }
   /* Added wrapper to prevent disrupting filters styles */
   .filters-wrapper {
+    padding: 0;
     display: block;
     max-height: 0;
     overflow: hidden;

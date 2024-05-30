@@ -10,6 +10,27 @@ document.addEventListener("DOMContentLoaded", () => {
     arrow.classList.toggle("rotated");
   });
 
+  // Function to close filters
+  const closeFilterContainer = () => {
+    filtersWrapper.classList.remove("visible");
+    arrow.classList.remove("rotated");
+  };
+
+  // Close filters when clicking outside of it
+  document.body.addEventListener("click", (event) => {
+    if (
+      !filtersWrapper.contains(event.target) &&
+      !toggleButton.contains(event.target)
+    ) {
+      closeFilterContainer();
+    }
+  });
+
+  // Close filters when scrolling
+  document.addEventListener("scroll", () => {
+    closeFilterContainer();
+  });
+
   const submitButton = document.getElementById("submit-button");
 
   submitButton.addEventListener("click", async () => {
@@ -36,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (gameModeValue !== "any") {
         data.gameMode = parseInt(gameModeValue);
       }
+
+      closeFilterContainer();
 
       // Send client request to server
       const response = await fetch("http://localhost:3000/api/games", {
