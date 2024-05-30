@@ -10,429 +10,464 @@
   <body>
     <main class="main-container">
       <section class="filter-container">
-        <div class="filters">
-          <div class="filter-start">
-            <!-- Search Bar -->
-            <input type="text" id="search-bar" placeholder="Search games..." />
-            <!-- Genre Filter -->
-            <div class="filter-genre">
-              <label for="genre-select">Select Genre:</label>
-              <select id="genre-select" name="genre">
-                <option value="any">Any</option>
-                <option
-                  value="31"
-                  data-genre-id="31"
-                  data-genre-name="Adventure"
-                >
-                  Adventure
-                </option>
-                <option value="33" data-genre-id="33" data-genre-name="Arcade">
-                  Arcade
-                </option>
-                <option
-                  value="35"
-                  data-genre-id="35"
-                  data-genre-name="Card & Board Game"
-                >
-                  Card & Board Game
-                </option>
-                <option value="4" data-genre-id="4" data-genre-name="Fighting">
-                  Fighting
-                </option>
-                <option
-                  value="25"
-                  data-genre-id="25"
-                  data-genre-name="Hack and slash/Beat 'em up"
-                >
-                  Hack and slash/Beat 'em up
-                </option>
-                <option value="32" data-genre-id="32" data-genre-name="Indie">
-                  Indie
-                </option>
-                <option value="36" data-genre-id="36" data-genre-name="MOBA">
-                  MOBA
-                </option>
-                <option value="7" data-genre-id="7" data-genre-name="Music">
-                  Music
-                </option>
-                <option value="30" data-genre-id="30" data-genre-name="Pinball">
-                  Pinball
-                </option>
-                <option value="8" data-genre-id="8" data-genre-name="Platform">
-                  Platform
-                </option>
-                <option
-                  value="2"
-                  data-genre-id="2"
-                  data-genre-name="Point-and-click"
-                >
-                  Point-and-click
-                </option>
-                <option value="9" data-genre-id="9" data-genre-name="Puzzle">
-                  Puzzle
-                </option>
-                <option
-                  value="26"
-                  data-genre-id="26"
-                  data-genre-name="Quiz/Trivia"
-                >
-                  Quiz/Trivia
-                </option>
-                <option value="10" data-genre-id="10" data-genre-name="Racing">
-                  Racing
-                </option>
-                <option
-                  value="11"
-                  data-genre-id="11"
-                  data-genre-name="Real Time Strategy (RTS)"
-                >
-                  Real Time Strategy (RTS)
-                </option>
-                <option
-                  value="12"
-                  data-genre-id="12"
-                  data-genre-name="Role-playing (RPG)"
-                >
-                  Role-playing (RPG)
-                </option>
-                <option
-                  value="13"
-                  data-genre-id="13"
-                  data-genre-name="Simulator"
-                >
-                  Simulator
-                </option>
-                <option value="5" data-genre-id="5" data-genre-name="Shooter">
-                  Shooter
-                </option>
-                <option value="14" data-genre-id="14" data-genre-name="Sport">
-                  Sport
-                </option>
-                <option
-                  value="15"
-                  data-genre-id="15"
-                  data-genre-name="Strategy"
-                >
-                  Strategy
-                </option>
-                <option
-                  value="24"
-                  data-genre-id="24"
-                  data-genre-name="Tactical"
-                >
-                  Tactical
-                </option>
-                <option
-                  value="16"
-                  data-genre-id="16"
-                  data-genre-name="Turn-based strategy (TBS)"
-                >
-                  Turn-based strategy (TBS)
-                </option>
-                <option
-                  value="34"
-                  data-genre-id="34"
-                  data-genre-name="Visual Novel"
-                >
-                  Visual Novel
-                </option>
-              </select>
+        <div class="filters-wrapper">
+          <div class="filters">
+            <div class="filter-start">
+              <!-- Search Bar -->
+              <div class="search-container">
+                <h4>Dashboard</h4>
+                <input
+                  type="text"
+                  id="search-bar"
+                  placeholder="Search games..."
+                />
+              </div>
+              <!-- Genre Filter -->
+              <div class="filter-genre">
+                <label for="genre-select">Select Genre:</label>
+                <select id="genre-select" name="genre">
+                  <option value="any">Any</option>
+                  <option
+                    value="31"
+                    data-genre-id="31"
+                    data-genre-name="Adventure"
+                  >
+                    Adventure
+                  </option>
+                  <option
+                    value="33"
+                    data-genre-id="33"
+                    data-genre-name="Arcade"
+                  >
+                    Arcade
+                  </option>
+                  <option
+                    value="35"
+                    data-genre-id="35"
+                    data-genre-name="Card & Board Game"
+                  >
+                    Card & Board Game
+                  </option>
+                  <option
+                    value="4"
+                    data-genre-id="4"
+                    data-genre-name="Fighting"
+                  >
+                    Fighting
+                  </option>
+                  <option
+                    value="25"
+                    data-genre-id="25"
+                    data-genre-name="Hack and slash/Beat 'em up"
+                  >
+                    Hack and slash/Beat 'em up
+                  </option>
+                  <option value="32" data-genre-id="32" data-genre-name="Indie">
+                    Indie
+                  </option>
+                  <option value="36" data-genre-id="36" data-genre-name="MOBA">
+                    MOBA
+                  </option>
+                  <option value="7" data-genre-id="7" data-genre-name="Music">
+                    Music
+                  </option>
+                  <option
+                    value="30"
+                    data-genre-id="30"
+                    data-genre-name="Pinball"
+                  >
+                    Pinball
+                  </option>
+                  <option
+                    value="8"
+                    data-genre-id="8"
+                    data-genre-name="Platform"
+                  >
+                    Platform
+                  </option>
+                  <option
+                    value="2"
+                    data-genre-id="2"
+                    data-genre-name="Point-and-click"
+                  >
+                    Point-and-click
+                  </option>
+                  <option value="9" data-genre-id="9" data-genre-name="Puzzle">
+                    Puzzle
+                  </option>
+                  <option
+                    value="26"
+                    data-genre-id="26"
+                    data-genre-name="Quiz/Trivia"
+                  >
+                    Quiz/Trivia
+                  </option>
+                  <option
+                    value="10"
+                    data-genre-id="10"
+                    data-genre-name="Racing"
+                  >
+                    Racing
+                  </option>
+                  <option
+                    value="11"
+                    data-genre-id="11"
+                    data-genre-name="Real Time Strategy (RTS)"
+                  >
+                    Real Time Strategy (RTS)
+                  </option>
+                  <option
+                    value="12"
+                    data-genre-id="12"
+                    data-genre-name="Role-playing (RPG)"
+                  >
+                    Role-playing (RPG)
+                  </option>
+                  <option
+                    value="13"
+                    data-genre-id="13"
+                    data-genre-name="Simulator"
+                  >
+                    Simulator
+                  </option>
+                  <option value="5" data-genre-id="5" data-genre-name="Shooter">
+                    Shooter
+                  </option>
+                  <option value="14" data-genre-id="14" data-genre-name="Sport">
+                    Sport
+                  </option>
+                  <option
+                    value="15"
+                    data-genre-id="15"
+                    data-genre-name="Strategy"
+                  >
+                    Strategy
+                  </option>
+                  <option
+                    value="24"
+                    data-genre-id="24"
+                    data-genre-name="Tactical"
+                  >
+                    Tactical
+                  </option>
+                  <option
+                    value="16"
+                    data-genre-id="16"
+                    data-genre-name="Turn-based strategy (TBS)"
+                  >
+                    Turn-based strategy (TBS)
+                  </option>
+                  <option
+                    value="34"
+                    data-genre-id="34"
+                    data-genre-name="Visual Novel"
+                  >
+                    Visual Novel
+                  </option>
+                </select>
+              </div>
             </div>
-          </div>
-
-          <div class="filter-middle">
-            <!-- Rating Filter -->
-            <div class="filter-rating">
-              <label for="rating">Rating:</label>
-              <select id="rating-select" name="rating">
-                <option value="any" selected>Any</option>
-                <option value="80">80+</option>
-                <option value="70">70+</option>
-                <option value="60">60+</option>
-                <option value="50">50+</option>
-              </select>
+            <div class="filter-middle">
+              <!-- Rating Filter -->
+              <div class="filter-rating">
+                <label for="rating">Rating:</label>
+                <select id="rating-select" name="rating">
+                  <option value="any" selected>Any</option>
+                  <option value="80">80+</option>
+                  <option value="70">70+</option>
+                  <option value="60">60+</option>
+                  <option value="50">50+</option>
+                </select>
+              </div>
+              <!-- Platform Filter -->
+              <div class="filter-platform">
+                <label for="platform">Platforms:</label>
+                <select id="platform-select" name="platforms">
+                  <option value="any" selected>Any</option>
+                  <option
+                    value="52"
+                    data-platform-id="52"
+                    data-platform-name="Arcade"
+                  >
+                    Arcade
+                  </option>
+                  <option
+                    value="34"
+                    data-platform-id="34"
+                    data-platform-name="Android"
+                  >
+                    Android
+                  </option>
+                  <option
+                    value="33"
+                    data-platform-id="33"
+                    data-platform-name="Game Boy"
+                  >
+                    Game Boy
+                  </option>
+                  <option
+                    value="22"
+                    data-platform-id="22"
+                    data-platform-name="Game Boy Color"
+                  >
+                    Game Boy Color
+                  </option>
+                  <option
+                    value="24"
+                    data-platform-id="24"
+                    data-platform-name="Game Boy Advance"
+                  >
+                    Game Boy Advance
+                  </option>
+                  <option
+                    value="388"
+                    data-platform-id="388"
+                    data-platform-name="Gear VR"
+                  >
+                    Gear VR
+                  </option>
+                  <option
+                    value="39"
+                    data-platform-id="39"
+                    data-platform-name="iOS"
+                  >
+                    iOS
+                  </option>
+                  <option
+                    value="14"
+                    data-platform-id="14"
+                    data-platform-name="Mac"
+                  >
+                    Mac
+                  </option>
+                  <option
+                    value="386"
+                    data-platform-id="386"
+                    data-platform-name="Meta Quest 2"
+                  >
+                    Meta Quest 2
+                  </option>
+                  <option
+                    value="471"
+                    data-platform-id="471"
+                    data-platform-name="Meta Quest 3"
+                  >
+                    Meta Quest 3
+                  </option>
+                  <option
+                    value="130"
+                    data-platform-id="130"
+                    data-platform-name="Nintendo Switch"
+                  >
+                    Nintendo Switch
+                  </option>
+                  <option
+                    value="20"
+                    data-platform-id="20"
+                    data-platform-name="Nintendo DS"
+                  >
+                    Nintendo DS
+                  </option>
+                  <option
+                    value="159"
+                    data-platform-id="159"
+                    data-platform-name="Nintendo DSi"
+                  >
+                    Nintendo DSi
+                  </option>
+                  <option
+                    value="21"
+                    data-platform-id="21"
+                    data-platform-name="Nintendo GameCube"
+                  >
+                    Nintendo GameCube
+                  </option>
+                  <option
+                    value="387"
+                    data-platform-id="387"
+                    data-platform-name="Oculus Go"
+                  >
+                    Oculus Go
+                  </option>
+                  <option
+                    value="384"
+                    data-platform-id="384"
+                    data-platform-name="Oculus Quest"
+                  >
+                    Oculus Quest
+                  </option>
+                  <option
+                    value="162"
+                    data-platform-id="162"
+                    data-platform-name="Oculus VR"
+                  >
+                    Oculus VR
+                  </option>
+                  <option
+                    value="6"
+                    data-platform-id="6"
+                    data-platform-name="PC (Microsoft Windows)"
+                  >
+                    PC (Microsoft Windows)
+                  </option>
+                  <option
+                    value="7"
+                    data-platform-id="7"
+                    data-platform-name="PlayStation"
+                  >
+                    PlayStation
+                  </option>
+                  <option
+                    value="8"
+                    data-platform-id="8"
+                    data-platform-name="PlayStation 2"
+                  >
+                    PlayStation 2
+                  </option>
+                  <option
+                    value="9"
+                    data-platform-id="9"
+                    data-platform-name="PlayStation 3"
+                  >
+                    PlayStation 3
+                  </option>
+                  <option
+                    value="48"
+                    data-platform-id="48"
+                    data-platform-name="PlayStation 4"
+                  >
+                    PlayStation 4
+                  </option>
+                  <option
+                    value="167"
+                    data-platform-id="167"
+                    data-platform-name="PlayStation 5"
+                  >
+                    PlayStation 5
+                  </option>
+                  <option
+                    value="165"
+                    data-platform-id="165"
+                    data-platform-name="PlayStation VR"
+                  >
+                    PlayStation VR
+                  </option>
+                  <option
+                    value="390"
+                    data-platform-id="390"
+                    data-platform-name="PlayStation VR2"
+                  >
+                    PlayStation VR2
+                  </option>
+                  <option
+                    value="163"
+                    data-platform-id="163"
+                    data-platform-name="SteamVR"
+                  >
+                    SteamVR
+                  </option>
+                  <option
+                    value="5"
+                    data-platform-id="5"
+                    data-platform-name="Wii"
+                  >
+                    Wii
+                  </option>
+                  <option
+                    value="41"
+                    data-platform-id="41"
+                    data-platform-name="Wii U"
+                  >
+                    Wii U
+                  </option>
+                  <option
+                    value="11"
+                    data-platform-id="11"
+                    data-platform-name="Xbox"
+                  >
+                    Xbox
+                  </option>
+                  <option
+                    value="12"
+                    data-platform-id="12"
+                    data-platform-name="Xbox 360"
+                  >
+                    Xbox 360
+                  </option>
+                  <option
+                    value="49"
+                    data-platform-id="49"
+                    data-platform-name="Xbox One"
+                  >
+                    Xbox One
+                  </option>
+                  <option
+                    value="169"
+                    data-platform-id="169"
+                    data-platform-name="Xbox Series X|S"
+                  >
+                    Xbox Series X|S
+                  </option>
+                </select>
+              </div>
             </div>
-            <!-- Platform Filter -->
-            <div class="filter-platform">
-              <label for="platform">Platforms:</label>
-              <select id="platform-select" name="platforms">
-                <option value="any" selected>Any</option>
-                <option
-                  value="52"
-                  data-platform-id="52"
-                  data-platform-name="Arcade"
-                >
-                  Arcade
-                </option>
-                <option
-                  value="34"
-                  data-platform-id="34"
-                  data-platform-name="Android"
-                >
-                  Android
-                </option>
-                <option
-                  value="33"
-                  data-platform-id="33"
-                  data-platform-name="Game Boy"
-                >
-                  Game Boy
-                </option>
-                <option
-                  value="22"
-                  data-platform-id="22"
-                  data-platform-name="Game Boy Color"
-                >
-                  Game Boy Color
-                </option>
-                <option
-                  value="24"
-                  data-platform-id="24"
-                  data-platform-name="Game Boy Advance"
-                >
-                  Game Boy Advance
-                </option>
-                <option
-                  value="388"
-                  data-platform-id="388"
-                  data-platform-name="Gear VR"
-                >
-                  Gear VR
-                </option>
-                <option
-                  value="39"
-                  data-platform-id="39"
-                  data-platform-name="iOS"
-                >
-                  iOS
-                </option>
-                <option
-                  value="14"
-                  data-platform-id="14"
-                  data-platform-name="Mac"
-                >
-                  Mac
-                </option>
-                <option
-                  value="386"
-                  data-platform-id="386"
-                  data-platform-name="Meta Quest 2"
-                >
-                  Meta Quest 2
-                </option>
-                <option
-                  value="471"
-                  data-platform-id="471"
-                  data-platform-name="Meta Quest 3"
-                >
-                  Meta Quest 3
-                </option>
-                <option
-                  value="130"
-                  data-platform-id="130"
-                  data-platform-name="Nintendo Switch"
-                >
-                  Nintendo Switch
-                </option>
-                <option
-                  value="20"
-                  data-platform-id="20"
-                  data-platform-name="Nintendo DS"
-                >
-                  Nintendo DS
-                </option>
-                <option
-                  value="159"
-                  data-platform-id="159"
-                  data-platform-name="Nintendo DSi"
-                >
-                  Nintendo DSi
-                </option>
-                <option
-                  value="21"
-                  data-platform-id="21"
-                  data-platform-name="Nintendo GameCube"
-                >
-                  Nintendo GameCube
-                </option>
-                <option
-                  value="387"
-                  data-platform-id="387"
-                  data-platform-name="Oculus Go"
-                >
-                  Oculus Go
-                </option>
-                <option
-                  value="384"
-                  data-platform-id="384"
-                  data-platform-name="Oculus Quest"
-                >
-                  Oculus Quest
-                </option>
-                <option
-                  value="162"
-                  data-platform-id="162"
-                  data-platform-name="Oculus VR"
-                >
-                  Oculus VR
-                </option>
-                <option
-                  value="6"
-                  data-platform-id="6"
-                  data-platform-name="PC (Microsoft Windows)"
-                >
-                  PC (Microsoft Windows)
-                </option>
-                <option
-                  value="7"
-                  data-platform-id="7"
-                  data-platform-name="PlayStation"
-                >
-                  PlayStation
-                </option>
-                <option
-                  value="8"
-                  data-platform-id="8"
-                  data-platform-name="PlayStation 2"
-                >
-                  PlayStation 2
-                </option>
-                <option
-                  value="9"
-                  data-platform-id="9"
-                  data-platform-name="PlayStation 3"
-                >
-                  PlayStation 3
-                </option>
-                <option
-                  value="48"
-                  data-platform-id="48"
-                  data-platform-name="PlayStation 4"
-                >
-                  PlayStation 4
-                </option>
-                <option
-                  value="167"
-                  data-platform-id="167"
-                  data-platform-name="PlayStation 5"
-                >
-                  PlayStation 5
-                </option>
-                <option
-                  value="165"
-                  data-platform-id="165"
-                  data-platform-name="PlayStation VR"
-                >
-                  PlayStation VR
-                </option>
-                <option
-                  value="390"
-                  data-platform-id="390"
-                  data-platform-name="PlayStation VR2"
-                >
-                  PlayStation VR2
-                </option>
-                <option
-                  value="163"
-                  data-platform-id="163"
-                  data-platform-name="SteamVR"
-                >
-                  SteamVR
-                </option>
-                <option value="5" data-platform-id="5" data-platform-name="Wii">
-                  Wii
-                </option>
-                <option
-                  value="41"
-                  data-platform-id="41"
-                  data-platform-name="Wii U"
-                >
-                  Wii U
-                </option>
-                <option
-                  value="11"
-                  data-platform-id="11"
-                  data-platform-name="Xbox"
-                >
-                  Xbox
-                </option>
-                <option
-                  value="12"
-                  data-platform-id="12"
-                  data-platform-name="Xbox 360"
-                >
-                  Xbox 360
-                </option>
-                <option
-                  value="49"
-                  data-platform-id="49"
-                  data-platform-name="Xbox One"
-                >
-                  Xbox One
-                </option>
-                <option
-                  value="169"
-                  data-platform-id="169"
-                  data-platform-name="Xbox Series X|S"
-                >
-                  Xbox Series X|S
-                </option>
-              </select>
+            <div class="filter-end">
+              <!-- Game Mode Filter -->
+              <div class="filter-game-mode">
+                <label for="game-modes">Game Modes:</label>
+                <select id="game-mode-select" name="game-modes">
+                  <option value="any" selected>Any</option>
+                  <option
+                    value="1"
+                    data-game-mode-id="1"
+                    data-game-mode-name="Single player"
+                  >
+                    Single Player
+                  </option>
+                  <option
+                    value="2"
+                    data-game-mode-id="2"
+                    data-game-mode-name="Multiplayer"
+                  >
+                    Multiplayer
+                  </option>
+                  <option
+                    value="3"
+                    data-game-mode-id="3"
+                    data-game-mode-name="Co-operative"
+                  >
+                    Co-operative
+                  </option>
+                  <option
+                    value="4"
+                    data-game-mode-id="4"
+                    data-game-mode-name="Split screen"
+                  >
+                    Split Screen
+                  </option>
+                  <option
+                    value="5"
+                    data-game-mode-id="5"
+                    data-game-mode-name="Massively Multiplayer Online (MMO)"
+                  >
+                    Massively Multiplayer Online (MMO)
+                  </option>
+                  <option
+                    value="6"
+                    data-game-mode-id="6"
+                    data-game-mode-name="Battle Royale"
+                  >
+                    Battle Royale
+                  </option>
+                </select>
+              </div>
+              <button id="submit-button">List games</button>
             </div>
-          </div>
-          <div class="filter-end">
-            <!-- Game Mode Filter -->
-            <div class="filter-game-mode">
-              <label for="game-modes">Game Modes:</label>
-              <select id="game-mode-select" name="game-modes">
-                <option value="any" selected>Any</option>
-                <option
-                  value="1"
-                  data-game-mode-id="1"
-                  data-game-mode-name="Single player"
-                >
-                  Single Player
-                </option>
-                <option
-                  value="2"
-                  data-game-mode-id="2"
-                  data-game-mode-name="Multiplayer"
-                >
-                  Multiplayer
-                </option>
-                <option
-                  value="3"
-                  data-game-mode-id="3"
-                  data-game-mode-name="Co-operative"
-                >
-                  Co-operative
-                </option>
-                <option
-                  value="4"
-                  data-game-mode-id="4"
-                  data-game-mode-name="Split screen"
-                >
-                  Split Screen
-                </option>
-                <option
-                  value="5"
-                  data-game-mode-id="5"
-                  data-game-mode-name="Massively Multiplayer Online (MMO)"
-                >
-                  Massively Multiplayer Online (MMO)
-                </option>
-                <option
-                  value="6"
-                  data-game-mode-id="6"
-                  data-game-mode-name="Battle Royale"
-                >
-                  Battle Royale
-                </option>
-              </select>
-            </div>
-            <button id="submit-button">List games</button>
           </div>
         </div>
+        <button id="toggle-button" class="toggle-button">
+          <span id="arrow">&#9660;</span>
+        </button>
       </section>
       <section class="content">
         <ul id="games-list">

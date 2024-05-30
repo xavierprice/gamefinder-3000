@@ -1,6 +1,15 @@
 import { displayGames } from "./displayGames.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.getElementById("toggle-button");
+  const filtersWrapper = document.querySelector(".filters-wrapper");
+  const arrow = document.getElementById("arrow");
+
+  toggleButton.addEventListener("click", () => {
+    filtersWrapper.classList.toggle("visible");
+    arrow.classList.toggle("rotated");
+  });
+
   const submitButton = document.getElementById("submit-button");
 
   submitButton.addEventListener("click", async () => {

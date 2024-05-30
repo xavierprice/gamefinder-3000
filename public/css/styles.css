@@ -58,7 +58,41 @@ li {
   height: 100%;
   min-width: 250px;
   padding: var(--padding-small);
-  background-color: var(--color-background);
+  background-color: darkgray;
+}
+
+/* Styles for the toggle button tab */
+.toggle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+  background: var(--color-button);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 20px 10px;
+  display: none;
+  position: fixed;
+  left: 75%;
+  transform: translateX(var(--padding-small));
+  z-index: 1000;
+  border-bottom-left-radius: var(--border-radius-small);
+  border-bottom-right-radius: var(--border-radius-small);
+}
+
+.toggle-button:hover {
+  height: 60px;
+}
+
+#arrow.rotated {
+  transform: rotate(180deg);
+}
+
+#arrow {
+  font-size: 20px;
+  transition: transform 0.3s, font-size 0.3s ease-in-out; /* Add transition for font-size */
 }
 
 /* Select menu classes */
@@ -67,6 +101,12 @@ li {
 .filter-platform #platform-select,
 .filter-game-mode #game-mode-select {
   cursor: pointer;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-half);
 }
 
 #search-bar {
@@ -288,16 +328,38 @@ footer {
 @media (max-width: 768px) {
   /* Filter container  */
   .filter-container {
+    padding: 0;
     flex-direction: row;
     height: auto;
     width: 100%;
-    border-bottom: solid 1px black;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+  /* Added wrapper to prevent disrupting filters styles */
+  .filters-wrapper {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out,
+      opacity 0.3s cubic-bezier(1, 1, 1, 1);
+    opacity: 0;
+  }
+
+  .filters-wrapper.visible {
+    max-height: 1000px;
+    opacity: 1;
+    overflow: hidden;
+  }
+
+  .filters {
+    padding: var(--padding-small);
   }
 
   /* Align search bar with rating filter */
   #search-bar {
     height: 36px;
-    margin-top: calc(18px + var(--padding-half));
   }
 
   .filters {
