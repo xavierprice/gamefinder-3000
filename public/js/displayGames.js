@@ -171,14 +171,17 @@ export function displayGames(games) {
     dateReleased.classList.add("date-released");
     dateReleased.textContent =
       "Released: " +
-      (game.release_dates
-        ? new Date(game.release_dates[0].date).toLocaleDateString()
-        : "29 May 2024");
+      (game.first_release_date
+        ? new Date(game.first_release_date * 1000).toLocaleDateString()
+        : "N/A");
 
     const dataUpdated = document.createElement("h5");
     dataUpdated.classList.add("data-updated");
     dataUpdated.textContent =
-      "Data updated: " + new Date().toLocaleDateString();
+      "Data updated: " +
+      (game.updated_at
+        ? new Date(game.updated_at * 1000).toLocaleDateString()
+        : "N/A");
 
     footerEnd.appendChild(dateReleased);
     footerEnd.appendChild(dataUpdated);

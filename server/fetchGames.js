@@ -5,12 +5,21 @@ const getToken = require(path.resolve(__dirname, "./getToken.js"));
 
 const clientId = process.env.CLIENT_ID;
 
-async function fetchGames(search, rating, genre, platform, gameMode) {
+async function fetchGames(
+  search,
+  rating,
+  genre,
+  platform,
+  gameMode,
+  releaseDate,
+  updatedAt
+) {
   try {
     const accessToken = await getToken();
-// Fetch properties of fields used in HTML
+    // Fetch properties of fields used in HTML
     let query = `
-      fields name, total_rating, genres.name, platforms.name, game_modes.name, cover.url, summary;
+      fields name, total_rating, genres.name, platforms.name, game_modes.name, cover.url, summary, first_release_date, updated_at, version_parent;
+where category = 0 & version_parent = null;
     `;
     // Add values to query if present in data
     if (search) {
