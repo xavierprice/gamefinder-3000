@@ -40,11 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
       let genreValue = document.getElementById("genre-select").value;
       let platformValue = document.getElementById("platform-select").value;
       let gameModeValue = document.getElementById("game-mode-select").value;
-      const loading = document.getElementById("loading");
+      const loading = document.getElementById("loading-container");
       const homePage = document.getElementById("home-page");
 
       homePage.classList.add("hidden");
       loading.classList.remove("hidden");
+      document.body.classList.add("loading");
 
       // Construct object to pass through to server
       let data = { search: searchValue };
@@ -78,6 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const games = await response.json();
         console.log("Success", games);
         displayGames(games);
+        window.scrollTo({
+          top: 0,
+          behavior: "instant",
+        });
       } else {
         console.error("Request failed");
       }

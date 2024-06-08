@@ -1,8 +1,10 @@
 export function displayGames(games) {
   const gamesList = document.getElementById("games-list");
+  const loading = document.getElementById("loading-container");
 
   gamesList.classList.remove("hidden");
   loading.classList.add("hidden");
+  document.body.classList.remove("loading");
 
   // Clear existing games
   gamesList.innerHTML = "";
