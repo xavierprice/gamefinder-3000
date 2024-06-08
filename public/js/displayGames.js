@@ -1,5 +1,9 @@
 export function displayGames(games) {
+  const homePage = document.getElementById("home-page");
   const gamesList = document.getElementById("games-list");
+
+  homePage.classList.add("hidden");
+  gamesList.classList.remove("hidden");
 
   // Clear existing games
   gamesList.innerHTML = "";
