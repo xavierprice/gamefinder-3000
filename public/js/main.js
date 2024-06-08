@@ -40,6 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
       let genreValue = document.getElementById("genre-select").value;
       let platformValue = document.getElementById("platform-select").value;
       let gameModeValue = document.getElementById("game-mode-select").value;
+      const loading = document.getElementById("loading");
+      const homePage = document.getElementById("home-page");
+
+      homePage.classList.add("hidden");
+      loading.classList.remove("hidden");
 
       // Construct object to pass through to server
       let data = { search: searchValue };
