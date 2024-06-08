@@ -1,3 +1,4 @@
+import { checkArray } from "./checkArray.js";
 import { displayGames } from "./displayGames.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -77,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (response.ok) {
         const games = await response.json();
+        checkArray(games)
         console.log("Success", games);
         displayGames(games);
         window.scrollTo({
