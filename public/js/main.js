@@ -2,26 +2,26 @@ import { checkArray } from "./checkArray.js";
 import { displayGames } from "./displayGames.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.getElementById("toggle-button");
+  const toggleButtonFilters = document.getElementById("toggle-button-filters");
   const filtersWrapper = document.querySelector(".filters-wrapper");
-  const arrow = document.getElementById("arrow");
+  const arrowFilters = document.getElementById("arrow-filters");
 
-  toggleButton.addEventListener("click", () => {
+  toggleButtonFilters.addEventListener("click", () => {
     filtersWrapper.classList.toggle("visible");
-    arrow.classList.toggle("rotated");
+    arrowFilters.classList.toggle("rotated");
   });
 
   // Function to close filters
   const closeFilterContainer = () => {
     filtersWrapper.classList.remove("visible");
-    arrow.classList.remove("rotated");
+    arrowFilters.classList.remove("rotated");
   };
 
   // Close filters when clicking outside of it
   document.body.addEventListener("click", (event) => {
     if (
       !filtersWrapper.contains(event.target) &&
-      !toggleButton.contains(event.target)
+      !toggleButtonFilters.contains(event.target)
     ) {
       closeFilterContainer();
     }
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (response.ok) {
         const games = await response.json();
-        checkArray(games)
+        checkArray(games);
         console.log("Success", games);
         displayGames(games);
         window.scrollTo({

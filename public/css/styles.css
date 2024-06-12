@@ -38,7 +38,7 @@ li {
 
   /* Font Sizes */
   --font-size-base: 16px;
-  --font-size-small: 14px;
+  --font-size-small: 12px;
   --font-size-large: 18px;
   --font-size-h1: 2.5rem;
   --font-size-h2: 1.75rem;
@@ -155,7 +155,7 @@ body.loading {
 /* Filter Section */
 .filter-container {
   position: fixed;
-  z-index: 3;
+  z-index: 4;
   flex: 1;
   height: 100%;
   min-width: 250px;
@@ -186,20 +186,34 @@ body.loading {
   height: 60px;
 }
 
-#arrow.rotated {
+#arrow-filters.rotated {
   transform: rotate(180deg);
 }
 
-#arrow {
+#arrow-filters,
+#arrow-sort {
   font-size: 20px;
-  transition: transform 0.3s, font-size 0.3s ease-in-out; /* Add transition for font-size */
+  transition: transform 0.3s, font-size 0.3s ease-in-out;
+}
+
+/* Sorting Section Styles */
+
+.sorting-container {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-half);
+}
+
+.sorting-container select {
+  flex: 1;
 }
 
 /* Select menu classes */
 .filter-genre #genre-select,
 .filter-rating #rating-select,
 .filter-platform #platform-select,
-.filter-game-mode #game-mode-select {
+.filter-game-mode #game-mode-select,
+.sorting-container select {
   cursor: pointer;
 }
 
@@ -241,7 +255,8 @@ body.loading {
 
 .filter-genre #genre-select,
 .filter-platform #platform-select,
-.filter-game-mode #game-mode-select {
+.filter-game-mode #game-mode-select,
+.sorting-container select {
   padding: var(--padding-half);
 }
 
@@ -447,6 +462,14 @@ footer {
   text-align: right;
 }
 @media (max-width: 768px) {
+  /* Sorting Section */
+  .sorting-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: var(--padding-small);
+  }
+
   /* Loading container  */
   #loading-container .loading-text {
     margin-left: 0;
@@ -474,6 +497,8 @@ footer {
   }
 
   .filters-wrapper h2 {
+    text-align: left;
+    padding-left: var(--padding-small);
     padding-top: var(--padding-small);
   }
 
@@ -542,12 +567,29 @@ footer {
   }
 }
 @media (max-width: 498px) {
+  /* Sorting */
+  .sorting-container {
+    flex-direction: column;
+    position: initial;
+    padding: 0 var(--padding-small) var(--padding-small) var(--padding-small);
+  }
+  .sorting-container label {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .sorting-container select {
+    width: 100%;
+  }
+
   /* Card */
   .card {
     min-width: 250px;
   }
 
   /* Header */
+  .filters-wrapper h2 {
+    text-align: center;
+  }
   .header-data {
     justify-content: center;
     flex-wrap: wrap-reverse;
