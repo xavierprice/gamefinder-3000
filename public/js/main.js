@@ -1,5 +1,6 @@
 import { checkArray } from "./checkArray.js";
 import { displayGames } from "./displayGames.js";
+import { sortGames } from "./sortGames.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggleButtonFilters = document.getElementById("toggle-button-filters");
@@ -80,7 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const games = await response.json();
         checkArray(games);
         console.log("Success", games);
-        displayGames(games);
+        document
+          .getElementById("sortBy")
+          .addEventListener("change", function () {
+            const criteria = this.value;
+            const sortedGames = sortGames(games, criteria);
+            displayGames(sortedGames);
+          });
+
+        // Initial sort
+        document.getElementById("sortBy").dispatchEvent(new Event("change"));
         window.scrollTo({
           top: 0,
           behavior: "instant",
