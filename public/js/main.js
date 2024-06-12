@@ -81,6 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const games = await response.json();
         checkArray(games);
         console.log("Success", games);
+        displayGames(games);
+        // Sort on change
         document
           .getElementById("sortBy")
           .addEventListener("change", function () {
