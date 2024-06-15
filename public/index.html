@@ -466,12 +466,20 @@
             </div>
           </div>
           <div class="sorting-container">
-            <label for="sortBy">Sort by:</label>
-            <select id="sortBy">
-              <option value="name">Name</option>
-              <option value="total_rating">Rating</option>
-              <option value="first_release_date">Release Date</option>
-            </select>
+            <div class="sort-by-container">
+              <label for="sortBy">Sort by:</label>
+              <select id="sortBy">
+                <option value="name">Name</option>
+                <option value="total_rating">Rating</option>
+                <option value="first_release_date">Release Date</option>
+              </select>
+            </div>
+            <div class="sort-order-container">
+              <div class="sort-order">
+                <div id="ascending" class="arrow selected">&#9650;</div>
+                <div id="descending" class="arrow">&#9660;</div>
+              </div>
+            </div>
           </div>
         </div>
         <button id="toggle-button-filters" class="toggle-button">

@@ -33,6 +33,37 @@ document.addEventListener("DOMContentLoaded", () => {
     closeFilterContainer();
   });
 
+  // Filter Order
+  const ascending = document.getElementById("ascending");
+  const descending = document.getElementById("descending");
+
+  let currentOrder = "ascending";
+
+  // Function to set currentOrder while gamesList is not visible
+  function handleClick(event) {
+    ascending.classList.remove("selected");
+    descending.classList.remove("selected");
+    event.target.classList.add("selected");
+    if (event.target === ascending) {
+      currentOrder = "ascending";
+    } else {
+      currentOrder = "descending";
+    }
+    console.log(currentOrder);
+  }
+
+  ascending.addEventListener("click", handleClick);
+  descending.addEventListener("click", handleClick);
+
+  function updateSortOrder() {
+    document
+      .getElementById("ascending")
+      .classList.toggle("selected", currentOrder === "ascending");
+    document
+      .getElementById("descending")
+      .classList.toggle("selected", currentOrder === "descending");
+  }
+
   const submitButton = document.getElementById("submit-button");
 
   submitButton.addEventListener("click", async () => {
@@ -81,13 +112,34 @@ document.addEventListener("DOMContentLoaded", () => {
         const games = await response.json();
         checkArray(games);
         console.log("Success", games);
-        displayGames(games);
+        console.log(currentOrder);
         // Sort on change
         document
           .getElementById("sortBy")
           .addEventListener("change", function () {
             const criteria = this.value;
-            const sortedGames = sortGames(games, criteria);
+            const order = currentOrder;
+            const sortedGames = sortGames(games, criteria, order);
+            displayGames(sortedGames);
+          });
+
+        // Set up event listener for sort order ascending
+        document
+          .getElementById("ascending")
+          .addEventListener("click", function () {
+            updateSortOrder();
+            const criteria = document.getElementById("sortBy").value;
+            const sortedGames = sortGames(games, criteria, currentOrder); // Sort the original array
+            displayGames(sortedGames);
+          });
+
+        // Set up event listener for sort order descending
+        document
+          .getElementById("descending")
+          .addEventListener("click", function () {
+            updateSortOrder();
+            const criteria = document.getElementById("sortBy").value;
+            const sortedGames = sortGames(games, criteria, currentOrder); // Sort the original array
             displayGames(sortedGames);
           });
 

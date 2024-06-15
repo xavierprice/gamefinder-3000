@@ -90,7 +90,7 @@ h1 {
 
 #loading-container .loading-text {
   display: flex;
-  margin-left: calc(250px + var(--padding-medium));
+  margin-left: calc(350px + var(--padding-medium));
 }
 
 @keyframes dotAnimation {
@@ -158,7 +158,7 @@ body.loading {
   z-index: 4;
   flex: 1;
   height: 100%;
-  min-width: 250px;
+  min-width: 350px;
   background-color: var(--color-filters);
 }
 
@@ -201,11 +201,28 @@ body.loading {
 .sorting-container {
   display: flex;
   align-items: center;
-  gap: var(--padding-half);
+  justify-content: center;
+  gap: var(--padding-small);
 }
 
 .sorting-container select {
   flex: 1;
+}
+
+.sort-order {
+  display: flex;
+  gap: var(--padding-half);
+  flex: 1;
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 24px;
+  user-select: none;
+}
+
+.arrow.selected {
+  color: var(--color-button);
 }
 
 /* Select menu classes */
@@ -311,7 +328,7 @@ body.loading {
 /* Content Section  */
 .content {
   position: relative;
-  margin-left: calc(250px + var(--padding-medium));
+  margin-left: 350px;
   flex: 4;
 }
 
@@ -464,10 +481,21 @@ footer {
 @media (max-width: 768px) {
   /* Sorting Section */
   .sorting-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: var(--padding-small);
+    width: 100%;
+    padding: 0 var(--padding-small) var(--padding-small) var(--padding-small);
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .sort-by-container {
+    display: flex;
+    align-items: center;
+    gap: var(--padding-half);
+  }
+
+  .sort-order-container {
+    display: flex;
+    align-self: flex-end;
   }
 
   /* Loading container  */
@@ -569,16 +597,14 @@ footer {
 @media (max-width: 498px) {
   /* Sorting */
   .sorting-container {
-    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    gap: var(--padding-half);
     position: initial;
     padding: 0 var(--padding-small) var(--padding-small) var(--padding-small);
   }
-  .sorting-container label {
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .sorting-container select {
-    width: 100%;
+  .sort-by-container {
+    flex: 1;
   }
 
   /* Card */
