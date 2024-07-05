@@ -7,6 +7,7 @@ const clientId = process.env.CLIENT_ID;
 
 async function fetchGames(
   search,
+  url,
   rating,
   genre,
   platform,
@@ -18,7 +19,7 @@ async function fetchGames(
     const accessToken = await getToken();
     // Fetch properties of fields used in HTML
     let query = `
-      fields name, total_rating, genres.name, platforms.name, game_modes.name, cover.url, summary, first_release_date, updated_at, version_parent;
+      fields name, url, total_rating, genres.name, platforms.name, game_modes.name, cover.url, summary, first_release_date, updated_at, version_parent;
 where category = 0 & version_parent = null;
     `;
     // Add values to query if present in data

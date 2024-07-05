@@ -35,6 +35,7 @@ app.post("/api/games", async (req, res) => {
     // Extract parameters from the request body
     const {
       search,
+      url,
       rating,
       genre,
       platform,
@@ -45,6 +46,7 @@ app.post("/api/games", async (req, res) => {
     // Pass parameters to fetchGames function
     const games = await fetchGames(
       search,
+      url,
       rating,
       genre,
       platform,

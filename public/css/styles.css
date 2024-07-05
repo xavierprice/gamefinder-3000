@@ -370,6 +370,15 @@ body.loading {
   padding-bottom: var(--padding-half);
 }
 
+/* Title / href colors */
+.game-link:link,
+.game-link:visited,
+.game-link:hover,
+.game-link:active {
+  color: black;
+  text-decoration: none;
+}
+
 .header-data {
   width: 100%;
   display: flex;

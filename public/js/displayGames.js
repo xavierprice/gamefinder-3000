@@ -18,7 +18,15 @@ export function displayGames(games) {
     // Title
     const title = document.createElement("h2");
     title.classList.add("title");
-    title.textContent = game.name;
+
+    const link = document.createElement("a");
+    link.href = game.url;
+    link.textContent = game.name;
+    link.classList.add("game-link");
+    link.target = "_blank";
+
+    //add link to title
+    title.appendChild(link);
 
     // Header Data
     const headerData = document.createElement("div");
