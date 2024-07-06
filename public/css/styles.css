@@ -68,7 +68,8 @@ h1 {
 #home-page.hidden,
 #games-list.hidden,
 #loading-container.hidden,
-#empty-array.hidden {
+#empty-array.hidden,
+#server-down.hidden {
   display: none;
 }
 
@@ -127,7 +128,8 @@ body.loading {
 }
 
 /* Empty Array Styling */
-#empty-array {
+#empty-array,
+#server-down {
   height: 100%;
   text-align: center;
   display: flex;

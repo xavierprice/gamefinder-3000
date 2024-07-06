@@ -75,7 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
       let gameModeValue = document.getElementById("game-mode-select").value;
       const loading = document.getElementById("loading-container");
       const homePage = document.getElementById("home-page");
+      const serverDownMessage = document.getElementById("server-down");
 
+      serverDownMessage.classList.add("hidden");
       homePage.classList.add("hidden");
       loading.classList.remove("hidden");
       document.body.classList.add("loading");
@@ -154,6 +156,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       console.error("Error:", error);
+      // Declare loading page and add hidden class
+      const loading = document.getElementById("loading-container");
+      loading.classList.add("hidden");
+      // Display server down message if server is down
+      const serverDownMessage = document.getElementById("server-down");
+      serverDownMessage.classList.remove("hidden");
     }
   });
 });
