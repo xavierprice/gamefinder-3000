@@ -2,8 +2,12 @@
 export function sortGames(games, criteria, order) {
   return games.slice().sort((a, b) => {
     const handleNA = (value) =>
-      // Treat N/A / undefined values to sit at the bottom end of the array
-      typeof value === "undefined" ? -Infinity : value;
+      // Treat N/A / undefined values to sit at the appropriate end of the array
+      typeof value === "undefined"
+        ? order === "ascending"
+          ? -Infinity
+          : Infinity
+        : value;
 
     let comparison = 0;
 
