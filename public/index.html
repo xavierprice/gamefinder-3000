@@ -20,95 +20,103 @@
     <title>Dashboard</title>
   </head>
   <body>
-<main class="main-container">
-  <section class="filter-container">
-    <div class="filters-wrapper">
-      <h2>API Game Search</h2>
-      <div class="filters">
-        <!-- Search Bar -->
-        <div class="search-container">
-          <input type="text" id="search-bar" placeholder="Search Games..." />
-        </div>
-        <!-- Genre Filter -->
-        <div class="filter-genre">
-          <label for="genre-select">Genre:</label>
-          <select id="genre-select" name="genre"></select>
-        </div>
-        <!-- Rating Filter -->
-        <div class="filter-rating">
-          <label for="rating-select">Rating:</label>
-          <select id="rating-select" name="rating">
-            <option value="any" selected>Any</option>
-            <option value="80">80+</option>
-            <option value="70">70+</option>
-            <option value="60">60+</option>
-            <option value="50">50+</option>
-          </select>
-        </div>
-        <!-- Platform Filter -->
-        <div class="filter-platform">
-          <label for="platform-select">Platform:</label>
-          <select id="platform-select" name="platforms"></select>
-        </div>
-        <!-- Game Mode Filter -->
-        <div class="filter-game-mode">
-          <label for="game-mode-select">Game Modes:</label>
-          <select id="game-mode-select" name="game-modes"></select>
-        </div>
-        <button id="submit-button">List games</button>
-      </div>
-      <div class="sorting-container">
-        <div class="sort-by-container">
-          <label for="sortBy">Sort:</label>
-          <select id="sortBy">
-            <option value="name">Name</option>
-            <option value="total_rating">Rating</option>
-            <option value="first_release_date">Release Date</option>
-          </select>
-        </div>
-        <div class="sort-order-container">
-          <div class="sort-order">
-            <div id="ascending" class="arrow selected">&#9650;</div>
-            <div id="descending" class="arrow">&#9660;</div>
+    <main class="main-container">
+      <section class="filter-container">
+        <div class="filters-wrapper">
+          <h2>API Game Search</h2>
+          <div class="filters">
+            <!-- Search Bar -->
+            <div class="search-container">
+              <input
+                type="text"
+                id="search-bar"
+                placeholder="Search Games..."
+              />
+            </div>
+            <!-- Genre Filter -->
+            <div class="filter-genre">
+              <label for="genre-select">Genre:</label>
+              <select id="genre-select" name="genre"></select>
+            </div>
+            <!-- Rating Filter -->
+            <div class="filter-rating">
+              <label>Rating:</label>
+              <div class="rating-options">
+                <button class="rating-option selected" data-value="any">
+                  Any
+                </button>
+                <button class="rating-option" data-value="80">80+</button>
+                <button class="rating-option" data-value="70">70+</button>
+                <button class="rating-option" data-value="60">60+</button>
+                <button class="rating-option" data-value="50">50+</button>
+              </div>
+            </div>
+
+            <!-- Platform Filter -->
+            <div class="filter-platform">
+              <label for="platform-select">Platform:</label>
+              <select id="platform-select" name="platforms"></select>
+            </div>
+            <!-- Game Mode Filter -->
+            <div class="filter-game-mode">
+              <label for="game-mode-select">Game Modes:</label>
+              <select id="game-mode-select" name="game-modes"></select>
+            </div>
+            <button id="submit-button">List games</button>
+          </div>
+          <div class="sorting-container">
+            <div class="sort-by-container">
+              <label for="sortBy">Sort:</label>
+              <select id="sortBy">
+                <option value="name">Name</option>
+                <option value="total_rating">Rating</option>
+                <option value="first_release_date">Release Date</option>
+              </select>
+            </div>
+            <div class="sort-order-container">
+              <div class="sort-order">
+                <div id="ascending" class="arrow selected">&#9650;</div>
+                <div id="descending" class="arrow">&#9660;</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <button id="toggle-button-filters" class="toggle-button">
-      <span id="arrow-filters">&#9660;</span>
-    </button>
-  </section>
-  <section class="content">
-    <div class="home-page" id="home-page">
-      <h1>Welcome to the Gamefinder 3000</h1>
-      <p>
-        The ultimate tool for uncovering the perfect game to match your taste!
-        Powered by the extensive IGDB database, this application allows you to
-        search through thousands of games, filter by genre, platform and more.
-        Gamefinder helps you explore and find new games that you'll love.
-      </p>
-    </div>
-    <div id="loading-container" class="hidden">
-      <div class="loading-text">
-        <h1>Loading</h1>
-        <h2>.</h2>
-        <h2>.</h2>
-        <h2>.</h2>
-      </div>
-    </div>
-    <div id="empty-array" class="hidden">
-      <h1>Uh oh!</h1>
-      <h2>We couldn't find what you were looking for.</h2>
-      <h2>Please try something else :]</h2>
-    </div>
-    <div id="server-down" class="hidden">
-      <h1>Uh oh!</h1>
-      <h2>Server is currently down.</h2>
-      <h2>Please try later :]</h2>
-    </div>
-    <ul id="games-list" class="hidden"></ul>
-  </section>
-</main>
+        <button id="toggle-button-filters" class="toggle-button">
+          <span id="arrow-filters">&#9660;</span>
+        </button>
+      </section>
+      <section class="content">
+        <div class="home-page" id="home-page">
+          <h1>Welcome to the Gamefinder 3000</h1>
+          <p>
+            The ultimate tool for uncovering the perfect game to match your
+            taste! Powered by the extensive IGDB database, this application
+            allows you to search through thousands of games, filter by genre,
+            platform and more. Gamefinder helps you explore and find new games
+            that you'll love.
+          </p>
+        </div>
+        <div id="loading-container" class="hidden">
+          <div class="loading-text">
+            <h1>Loading</h1>
+            <h2>.</h2>
+            <h2>.</h2>
+            <h2>.</h2>
+          </div>
+        </div>
+        <div id="empty-array" class="hidden">
+          <h1>Uh oh!</h1>
+          <h2>We couldn't find what you were looking for.</h2>
+          <h2>Please try something else :]</h2>
+        </div>
+        <div id="server-down" class="hidden">
+          <h1>Uh oh!</h1>
+          <h2>Server is currently down.</h2>
+          <h2>Please try later :]</h2>
+        </div>
+        <ul id="games-list" class="hidden"></ul>
+      </section>
+    </main>
 
     <script type="module" src="./js/main.js"></script>
   </body>

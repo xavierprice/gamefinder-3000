@@ -87,6 +87,23 @@ document.addEventListener("DOMContentLoaded", () => {
   populateSelect("platform-select", platforms);
   populateSelect("game-mode-select", gameModes);
 
+  //Rating options select
+  const ratingOptions = document.querySelectorAll(".rating-option");
+  let ratingValue = "any";
+
+  ratingOptions.forEach((option) => {
+    option.addEventListener("click", function () {
+      // Remove selected class from all options
+      ratingOptions.forEach((opt) => opt.classList.remove("selected"));
+
+      // Add selected class to the clicked option
+      this.classList.add("selected");
+
+      // Handle the selected rating value
+      ratingValue = this.getAttribute("data-value");
+    });
+  });
+
   const toggleButtonFilters = document.getElementById("toggle-button-filters");
   const filtersWrapper = document.querySelector(".filters-wrapper");
   const arrowFilters = document.getElementById("arrow-filters");
@@ -153,7 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
   submitButton.addEventListener("click", async () => {
     try {
       const searchValue = document.getElementById("search-bar").value;
-      let ratingValue = document.getElementById("rating-select").value;
       let genreValue = document.getElementById("genre-select").value;
       let platformValue = document.getElementById("platform-select").value;
       let gameModeValue = document.getElementById("game-mode-select").value;
