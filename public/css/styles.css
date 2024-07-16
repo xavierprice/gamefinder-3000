@@ -11,7 +11,7 @@ html {
   background-color: var(--color-background);
   height: 100%;
   width: 100%;
-  font-family: Arial, sans-serif;
+  font-family: "Rubik", Arial, sans-serif;
   box-sizing: border-box;
 }
 
@@ -53,6 +53,11 @@ li {
   /* Card Styling */
   --border-radius-small: 8px;
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+  font-family: "Rubik Doodle Shadow", system-ui;
 }
 
 h1 {
@@ -143,6 +148,7 @@ body.loading {
 
 .filters-wrapper {
   display: flex;
+  height: 100%;
   flex-direction: column;
   gap: var(--padding-small);
   padding: var(--padding-small);
@@ -207,6 +213,10 @@ body.loading {
   gap: var(--padding-small);
 }
 
+select {
+  width: fit-content;
+}
+
 .sorting-container select {
   flex: 1;
 }
@@ -254,44 +264,31 @@ body.loading {
   gap: var(--padding-small);
 }
 
-/* Split filters into three colomns for tablet/mobile */
-.filter-start,
-.filter-middle,
-.filter-end {
+.filter-group {
   display: flex;
-  flex-direction: column;
-  gap: var(--padding-small);
-}
-
-/* Column filter styling */
-.filter-genre,
-.filter-game-mode,
-.filter-platform {
-  display: flex;
-  flex-direction: column;
   gap: var(--padding-half);
 }
 
-.filter-genre #genre-select,
-.filter-platform #platform-select,
-.filter-game-mode #game-mode-select,
 .sorting-container select {
   padding: var(--padding-half);
 }
 
 /* Row filter styling */
+.filter-platform,
+.filter-game-mode,
+.filter-genre,
 .filter-rating {
   display: flex;
+  flex-direction: column;
   gap: var(--padding-half);
 }
 
+.filter-platform #platform-select,
+.filter-game-mode #game-mode-select,
+.filter-genre #genre-select,
 .filter-rating #rating-select {
   flex: 1;
   padding: var(--padding-half);
-}
-
-.filter-rating label {
-  align-self: center;
 }
 
 #submit-button {
