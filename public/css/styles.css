@@ -208,16 +208,11 @@ body.loading {
 .sorting-container {
   display: flex;
   align-items: center;
-
   gap: var(--padding-small);
 }
 
 select {
   width: fit-content;
-}
-
-.sorting-container select {
-  flex: 1;
 }
 
 .sort-order {
@@ -240,8 +235,7 @@ select {
 .filter-genre #genre-select,
 .filter-rating #rating-select,
 .filter-platform #platform-select,
-.filter-game-mode #game-mode-select,
-.sorting-container select {
+.filter-game-mode #game-mode-select {
   cursor: pointer;
   border: none;
 }
@@ -281,7 +275,6 @@ select {
 .filter-platform #platform-select,
 .filter-game-mode #game-mode-select,
 .filter-genre #genre-select {
-  flex: 1;
   padding: var(--padding-half);
 }
 
@@ -474,14 +467,6 @@ select {
   gap: var(--padding-half);
 }
 
-.platform,
-.genre,
-.game-mode {
-  gap: var(--padding-half);
-  color: var(--color-secondary);
-  font-size: var(--font-size-base);
-}
-
 .platform {
   flex: 3;
 }
@@ -555,13 +540,6 @@ footer {
   margin-top: auto;
 }
 
-.genre,
-.game-mode,
-.date-released,
-.data-update {
-  flex: 1;
-}
-
 .game-mode {
   text-align: right;
   justify-content: flex-end;
@@ -576,41 +554,24 @@ footer {
   text-align: right;
 }
 @media (max-width: 768px) {
-  /* Sorting Section */
-  .sorting-container {
-    width: 100%;
-    padding: 0 var(--padding-small) var(--padding-small) var(--padding-small);
-    flex: 1;
-    justify-content: flex-end;
-  }
-
-  .sort-by-container {
-    display: flex;
-    align-items: center;
-    gap: var(--padding-half);
-  }
-
-  .sort-order-container {
-    display: flex;
-    align-self: flex-end;
-  }
-
   /* Loading container  */
   #loading-container .loading-text {
     margin-left: 0;
   }
   /* Filter container  */
   .filter-container {
-    position: absolute;
-    flex-direction: row;
+    /* position: absolute; */
     height: auto;
     width: 100%;
   }
-
   .toggle-button {
     display: flex;
   }
-  /* Added wrapper to prevent disrupting filters styles */
+  .filters-wrapper h2 {
+    padding-left: var(--padding-small);
+    padding-top: var(--padding-small);
+  }
+  /* Added wrapper to prevent disrupting filters styles when navigating*/
   .filters-wrapper {
     padding: 0;
     display: block;
@@ -620,54 +581,68 @@ footer {
       opacity 0.3s cubic-bezier(1, 1, 1, 1);
     opacity: 0;
   }
-
-  .filters-wrapper h2 {
-    text-align: left;
-    padding-left: var(--padding-small);
-    padding-top: var(--padding-small);
-  }
-
   .filters-wrapper.visible {
     max-height: 1000px;
     opacity: 1;
     overflow: hidden;
   }
-
-  .filters {
-    padding: var(--padding-small);
-  }
-
   /* Align search bar with rating filter */
   #search-bar {
-    height: 36px;
+    height: 33px;
   }
-
+  .arrow {
+    font-size: 15px;
+  }
   .filters {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex: 1;
     flex-wrap: wrap;
     gap: var(--padding-small);
-    flex: 1;
+    padding: var(--padding-small);
   }
-
-  .filter-start,
-  .filter-middle,
-  .filter-end {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  .filter-genre {
+    justify-content: flex-end;
   }
-
-  .filters .filter-start {
-    justify-content: initial;
+  select {
+    width: initial;
   }
-
+  .search-container {
+    order: 1;
+    flex-direction: row;
+    align-items: flex-end;
+    grid-column: span 2;
+  }
+  .filter-genre {
+    order: 2;
+  }
+  .filter-platform {
+    order: 4;
+  }
+  .filter-game-mode {
+    order: 7;
+  }
   .filter-rating {
-    flex-direction: column;
+    order: 2;
   }
-
-  .filter-rating label {
-    align-self: flex-start;
+  .sorting-container {
+    order: 4;
+  }
+  .submit-container {
+    order: 7;
+    display: flex;
+    align-items: flex-end;
+  }
+  #submit-button {
+    flex: 1;
+  }
+  .rating-options,
+  .sort-by-options {
+    min-width: initial;
+  }
+  .sort-by-main,
+  .rating-option {
+    flex: 1;
   }
 
   /* Remove margin for filter layout */
@@ -691,42 +666,42 @@ footer {
     min-width: 100px;
   }
 }
-@media (max-width: 498px) {
-  /* Sorting */
+@media (max-width: 560px) {
+  .filters {
+    display: flex;
+  }
+  .search-container {
+    order: 1;
+  }
+  .filter-genre {
+    order: 2;
+  }
+  .filter-platform {
+    order: 3;
+  }
+  .filter-game-mode {
+    order: 4;
+  }
+  .filter-rating {
+    order: 3;
+  }
   .sorting-container {
-    width: 100%;
-    flex: 1;
-    gap: var(--padding-half);
-    position: initial;
-    padding: 0 var(--padding-small) var(--padding-small) var(--padding-small);
+    order: 6;
   }
-  .sort-by-container {
-    flex: 1;
+  .submit-container {
+    order: 7;
   }
-
+}
+@media (max-width: 498px) {
   /* Card */
   .card {
     min-width: 250px;
   }
 
   /* Header */
-  .filters-wrapper h2 {
-    text-align: center;
-  }
   .header-data {
     justify-content: center;
     flex-wrap: wrap-reverse;
-  }
-
-  .platform,
-  .rating,
-  .date-released,
-  .data-updated,
-  .genre,
-  .game-mode {
-    justify-content: center;
-    text-align: center;
-    min-width: 100%;
   }
 
   /* Card main */

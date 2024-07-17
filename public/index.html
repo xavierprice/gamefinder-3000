@@ -51,7 +51,6 @@
                 <button class="rating-option" data-value="50">50+</button>
               </div>
             </div>
-
             <!-- Platform Filter -->
             <div class="filter-platform">
               <label for="platform-select">Platform:</label>
@@ -62,33 +61,35 @@
               <label for="game-mode-select">Game Modes:</label>
               <select id="game-mode-select" name="game-modes"></select>
             </div>
-            <button id="submit-button">List games</button>
-          </div>
-          <div class="sorting-container">
-            <div class="sort-by-container">
-              <div class="sort-by-main">
-                <div class="sort-by-header">
-                  <label for="sortBy">Sort:</label>
-                  <div class="sort-order-container">
-                    <div class="sort-order">
-                      <div id="ascending" class="arrow selected">&#9650;</div>
-                      <div id="descending" class="arrow">&#9660;</div>
+            <div class="submit-container">
+              <button id="submit-button">List games</button>
+            </div>
+            <div class="sorting-container">
+              <div class="sort-by-container">
+                <div class="sort-by-main">
+                  <div class="sort-by-header">
+                    <label for="sortBy">Sort:</label>
+                    <div class="sort-order-container">
+                      <div class="sort-order">
+                        <div id="ascending" class="arrow selected">&#9650;</div>
+                        <div id="descending" class="arrow">&#9660;</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div id="sortBy" class="sort-by-options">
-                  <button class="sort-by-option selected" data-value="name">
-                    Name
-                  </button>
-                  <button class="sort-by-option" data-value="total_rating">
-                    Rating
-                  </button>
-                  <button
-                    class="sort-by-option"
-                    data-value="first_release_date"
-                  >
-                    Date Released
-                  </button>
+                  <div id="sortBy" class="sort-by-options">
+                    <button class="sort-by-option selected" data-value="name">
+                      Name
+                    </button>
+                    <button class="sort-by-option" data-value="total_rating">
+                      Rating
+                    </button>
+                    <button
+                      class="sort-by-option"
+                      data-value="first_release_date"
+                    >
+                      Date Released
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
