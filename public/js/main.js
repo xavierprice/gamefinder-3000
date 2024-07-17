@@ -89,7 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Rating options select
   const ratingOptions = document.querySelectorAll(".rating-option");
+  const sortByOptions = document.querySelectorAll(".sort-by-option");
   let ratingValue = "any";
+  let sortByValue = "name";
 
   ratingOptions.forEach((option) => {
     option.addEventListener("click", function () {
@@ -101,6 +103,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Handle the selected rating value
       ratingValue = this.getAttribute("data-value");
+    });
+  });
+
+  sortByOptions.forEach((option) => {
+    option.addEventListener("click", function () {
+      // Remove selected class from all options
+      sortByOptions.forEach((opt) => opt.classList.remove("selected"));
+
+      // Add selected class to the clicked option
+      this.classList.add("selected");
+
+      // Handle the selected sortBy value
+      sortByValue = this.getAttribute("data-value");
     });
   });
 
@@ -150,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       currentOrder = "descending";
     }
-    console.log(currentOrder);
   }
 
   ascending.addEventListener("click", handleClick);
@@ -215,37 +229,49 @@ document.addEventListener("DOMContentLoaded", () => {
         checkArray(games);
         console.log("Success", games);
         console.log(currentOrder);
+        // Initial sort
+        let criteria = sortByValue;
+        let order = currentOrder;
+        const sortedGames = sortGames(games, criteria, order);
+        displayGames(sortedGames);
         // Sort on change
         document
-          .getElementById("sortBy")
-          .addEventListener("change", function () {
-            const criteria = this.value;
-            const order = currentOrder;
-            const sortedGames = sortGames(games, criteria, order);
-            displayGames(sortedGames);
+          .querySelectorAll("#sortBy .sort-by-option")
+          .forEach((button) => {
+            button.addEventListener("click", function () {
+              document
+                .querySelector("#sortBy .sort-by-option.selected")
+                .classList.remove("selected");
+              this.classList.add("selected");
+              criteria = this.getAttribute("data-value");
+              order = currentOrder;
+              const sortedGames = sortGames(games, criteria, order);
+              displayGames(sortedGames);
+            });
           });
 
-        // Set up event listener for sort order ascending
         document
           .getElementById("ascending")
           .addEventListener("click", function () {
-            updateSortOrder();
-            const criteria = document.getElementById("sortBy").value;
-            const sortedGames = sortGames(games, criteria, currentOrder); // Sort the original array
+            updateSortOrder("ascending");
+            criteria = document
+              .querySelector("#sortBy .sort-by-option.selected")
+              .getAttribute("data-value");
+            const sortedGames = sortGames(games, criteria, currentOrder);
             displayGames(sortedGames);
           });
 
-        // Set up event listener for sort order descending
         document
           .getElementById("descending")
           .addEventListener("click", function () {
-            updateSortOrder();
-            const criteria = document.getElementById("sortBy").value;
-            const sortedGames = sortGames(games, criteria, currentOrder); // Sort the original array
+            updateSortOrder("descending");
+            criteria = document
+              .querySelector("#sortBy .sort-by-option.selected")
+              .getAttribute("data-value");
+            const sortedGames = sortGames(games, criteria, currentOrder);
             displayGames(sortedGames);
           });
 
-        // Initial sort
         document.getElementById("sortBy").dispatchEvent(new Event("change"));
         window.scrollTo({
           top: 0,

@@ -332,6 +332,11 @@ select {
 }
 
 /* Filter sort styles */
+.sort-by-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .sort-by-option {
   flex: 1;
 }
