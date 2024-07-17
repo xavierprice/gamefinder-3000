@@ -66,17 +66,30 @@
           </div>
           <div class="sorting-container">
             <div class="sort-by-container">
-              <label for="sortBy">Sort:</label>
-              <select id="sortBy">
-                <option value="name">Name</option>
-                <option value="total_rating">Rating</option>
-                <option value="first_release_date">Release Date</option>
-              </select>
-            </div>
-            <div class="sort-order-container">
-              <div class="sort-order">
-                <div id="ascending" class="arrow selected">&#9650;</div>
-                <div id="descending" class="arrow">&#9660;</div>
+              <div class="sort-by-main">
+                <label for="sortBy">Sort:</label>
+                <!-- <select id="sortBy">
+                  <option value="name">Name</option>
+                  <option value="total_rating">Rating</option>
+                  <option value="first_release_date">Release Date</option>
+                </select> -->
+                <div id="sortBy" class="sort-by-options">
+                  <button class="sort-by-option selected" data-value="name">
+                    Name
+                  </button>
+                  <button class="sort-by-option" data-value="rating">
+                    Rating
+                  </button>
+                  <button class="sort-by-option" data-value="date-released">
+                    Date Released
+                  </button>
+                </div>
+              </div>
+              <div class="sort-order-container">
+                <!-- <div class="sort-order">
+                  <div id="ascending" class="arrow selected">&#9650;</div>
+                  <div id="descending" class="arrow">&#9660;</div>
+                </div> -->
               </div>
             </div>
           </div>

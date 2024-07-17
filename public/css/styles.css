@@ -292,7 +292,8 @@ select {
 
 #genre-select,
 #platform-select,
-.rating-options {
+.rating-options,
+.sort-by-options {
   min-width: 202px;
 }
 
@@ -307,12 +308,22 @@ select {
   align-items: center;
 }
 
-.rating-options {
+.rating-options,
+.sort-by-options {
   display: flex;
   border: none;
 }
 
-.rating-option {
+.rating-options {
+  min-width: 202px;
+}
+
+.sort-by-options {
+  min-width: 253px;
+}
+
+.rating-option,
+.sort-by-option {
   padding: var(--padding-half);
   border: 1px solid #fff;
   background-color: #fff;
@@ -320,11 +331,33 @@ select {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.rating-option:hover {
+/* Filter sort styles */
+.sort-by-option {
+  flex: 1;
+}
+.sort-by-option:last-of-type {
+  flex: 2;
+}
+.rating-option,
+.sort-by-option + .sort-by-option {
+  border-left: 1px solid #ccc;
+}
+.rating-option:first-child,
+.sort-by-option:first-child {
+  border-left: none;
+}
+.rating-option:last-child,
+.sort-by-option:last-child {
+  border-right: none;
+}
+
+.rating-option:hover,
+.sort-by-option:hover {
   background-color: #f0f0f0;
 }
 
-.rating-option.selected {
+.rating-option.selected,
+.sort-by-option.selected {
   background-color: #007bff;
   color: #fff;
   border-color: #007bff;
@@ -344,6 +377,12 @@ select {
 }
 
 .sort-by-container {
+  width: 100%;
+  display: flex;
+  gap: var(--padding-half);
+}
+
+.sort-by-main {
   display: flex;
   flex-direction: column;
   gap: var(--padding-half);
