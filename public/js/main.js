@@ -179,6 +179,41 @@ document.addEventListener("DOMContentLoaded", () => {
       .classList.toggle("selected", currentOrder === "descending");
   }
 
+  const clearFiltersButton = document.getElementById("clear-filters-button");
+  clearFiltersButton.addEventListener("click", function () {
+    // Reset filter values to defaults
+    // Search
+    document.getElementById("search-bar").value = "";
+    // Genre
+    document.getElementById("genre-select").selectedIndex = 0;
+    // Rating
+    document
+      .querySelectorAll(".rating-options .rating-option")
+      .forEach((button) => {
+        button.classList.remove("selected");
+      });
+    document
+      .querySelector('.rating-options button[data-value="any"]')
+      .classList.add("selected");
+    ratingValue = "any";
+    // Platform
+    document.getElementById("platform-select").selectedIndex = 0;
+    // Game-modes
+    document.getElementById("game-mode-select").selectedIndex = 0;
+    // Sorting
+    document.querySelectorAll("#sortBy .sort-by-option").forEach((button) => {
+      button.classList.remove("selected");
+    });
+    document
+      .querySelector('#sortBy button[data-value="name"]')
+      .classList.add("selected");
+    sortByValue = "name";
+    // Order
+    document.getElementById("ascending").classList.add("selected");
+    document.getElementById("descending").classList.remove("selected");
+    currentOrder = "ascending";
+  });
+
   const submitButton = document.getElementById("submit-button");
 
   submitButton.addEventListener("click", async () => {
