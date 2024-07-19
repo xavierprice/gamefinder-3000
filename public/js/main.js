@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Handle the selected sortBy value
       sortByValue = this.getAttribute("data-value");
+
     });
   });
 

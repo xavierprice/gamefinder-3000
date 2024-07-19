@@ -3,6 +3,7 @@ node_modules
 
 # Environment variables
 .env
+tokenData.txt
 
 # Logs
 logs
