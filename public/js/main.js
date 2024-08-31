@@ -116,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Handle the selected sortBy value
       sortByValue = this.getAttribute("data-value");
-
     });
   });
 
@@ -252,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeFilterContainer();
 
       // Send client request to server
-      const response = await fetch("http://localhost:3000/api/games", {
+      const response = await fetch("http://localhost:5501/api/games", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -263,6 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (response.ok) {
         const games = await response.json();
         checkArray(games);
+        // development purposes
         console.log("Success", games);
         console.log(currentOrder);
         // Initial sort

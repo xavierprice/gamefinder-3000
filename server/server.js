@@ -3,7 +3,7 @@ const cors = require("cors");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const app = express();
-const PORT = 3000;
+const PORT = 5501;
 const fetchGames = require("./fetchGames");
 
 // Parse JSON bodies

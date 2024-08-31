@@ -1,7 +1,7 @@
-const axios = require("axios");
 const path = require("path");
+const axios = require("axios");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
-const getToken = require(path.resolve(__dirname, "./getToken.js"));
+const getToken = require(path.resolve(__dirname, "../getToken.js"));
 
 const clientId = process.env.CLIENT_ID;
 
@@ -17,6 +17,7 @@ async function fetchGames(
 ) {
   try {
     const accessToken = await getToken();
+
     // Fetch properties of fields used in HTML
     let query = `
       fields name, url, total_rating, genres.name, platforms.name, game_modes.name, cover.url, summary, first_release_date, updated_at, version_parent;
