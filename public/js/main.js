@@ -195,6 +195,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Hit enter on search bar to list games
+  const searchBar = document.getElementById("search-bar");
+  const submitButton = document.getElementById("submit-button");
+
+  searchBar.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      submitButton.click(); 
+    }
+  });
+
   ascending.addEventListener("click", handleClick);
   descending.addEventListener("click", handleClick);
 
@@ -241,8 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("descending").classList.remove("selected");
     currentOrder = "ascending";
   });
-
-  const submitButton = document.getElementById("submit-button");
 
   submitButton.addEventListener("click", async () => {
     try {
