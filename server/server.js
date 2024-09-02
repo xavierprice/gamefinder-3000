@@ -3,14 +3,16 @@ const cors = require("cors");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const app = express();
-const PORT = 5501;
 const fetchGames = require("./fetchGames");
+
+const PORT = process.env.PORT || 3000;
 
 // Parse JSON bodies
 app.use(express.json());
 
 // Custom CORS configuration
 const corsOptions = {
+  // change origin when hosted
   origin: process.env.SERVER_IP,
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type", "Authorization"],
