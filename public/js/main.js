@@ -123,6 +123,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const filtersWrapper = document.querySelector(".filters-wrapper");
   const arrowFilters = document.getElementById("arrow-filters");
 
+  const closeButton = document.querySelector(".close-button");
+
+  closeButton.addEventListener("click", () => {
+    closeFilterContainer();
+  });
+
   toggleButtonFilters.addEventListener("click", () => {
     filtersWrapper.classList.toggle("visible");
     arrowFilters.classList.toggle("rotated");
@@ -145,9 +151,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Close filters when scrolling
-  document.addEventListener("scroll", () => {
-    closeFilterContainer();
-  });
+  function addScrollListener() {
+    document.addEventListener("scroll", closeFilterContainer);
+  }
+  // Disable scrolling on smaller screens
+  function removeScrollListener() {
+    document.removeEventListener("scroll", closeFilterContainer);
+  }
+
+  // Handle scrolling on different screen sizes
+  function handleScrollListener() {
+    if (window.innerWidth > 492) {
+      addScrollListener();
+    } else {
+      removeScrollListener();
+    }
+  }
+
+  // Initial check on page load
+  handleScrollListener();
+
+  // Listen for window resize events to re-evaluate the screen size
+  window.addEventListener("resize", handleScrollListener);
 
   // Filter Order
   const ascending = document.getElementById("ascending");

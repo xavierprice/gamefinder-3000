@@ -581,7 +581,9 @@ textarea {
 }
 
 .close-button {
-
+  display: none;
+  padding-left: var(--padding-small);
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -601,7 +603,6 @@ textarea {
   }
 
   .filters-wrapper h2 {
-    padding-left: var(--padding-small);
     padding-top: var(--padding-small);
   }
   /* Added wrapper to prevent disrupting filters styles when navigating*/
@@ -615,9 +616,10 @@ textarea {
     opacity: 0;
   }
   .filters-wrapper.visible {
-    max-height: 1000px;
+    max-height: 500px;
     opacity: 1;
     overflow: hidden;
+    overflow-y: scroll;
   }
   /* Align search bar with rating filter */
   #search-bar {
@@ -633,6 +635,8 @@ textarea {
     flex-wrap: wrap;
     gap: var(--padding-small);
     padding: var(--padding-small);
+    height: 100%;
+    overflow-y: auto;
   }
   .filter-genre {
     justify-content: flex-end;
@@ -764,5 +768,8 @@ textarea {
 
   .footer-end {
     flex-wrap: wrap;
+  }
+  .close-button {
+    display: block;
   }
 }
