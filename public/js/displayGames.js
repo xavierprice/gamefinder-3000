@@ -1,7 +1,6 @@
 export function displayGames(games) {
   const gamesList = document.getElementById("games-list");
   const loading = document.getElementById("loading-container");
-  const defaultCover = "../assets/default-cover.jpg";
 
   loading.classList.add("hidden");
   document.body.classList.remove("loading");
@@ -74,7 +73,7 @@ export function displayGames(games) {
     // Cover Art
     const coverArt = document.createElement("img");
     coverArt.classList.add("card-cover-art");
-    coverArt.src = game.cover ? game.cover.url : defaultCover;
+    coverArt.src = game.cover ? game.cover.url : "../assets/default-cover.jpg";
     coverArt.alt = "Game Cover Art";
 
     // Summary
