@@ -23,14 +23,6 @@ const corsOptions = {
 // Enable CORS for all routes with specified options
 app.use(cors(corsOptions));
 
-// Log requests
-app.use((req, res, next) => {
-  console.log(`Received a ${req.method} request to ${req.url}`);
-  // console.log("Request Headers:", req.headers);
-  console.log("Request Body:", req.body);
-  next();
-});
-
 // Define endpoint to handle the request
 app.post("/api/games", async (req, res) => {
   try {
@@ -65,6 +57,6 @@ app.post("/api/games", async (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
