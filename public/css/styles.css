@@ -217,6 +217,7 @@ body.loading {
 
 select {
   width: fit-content;
+  height: 2rem;
 }
 
 .sort-order {
@@ -572,6 +573,17 @@ footer {
   min-width: auto;
   text-align: right;
 }
+
+/* prevent zoom in on smaller screens */
+input[type="text"],
+textarea {
+  font-size: 16px;
+}
+
+.close-button {
+
+}
+
 @media (max-width: 768px) {
   /* Loading container  */
   #loading-container .loading-text {
@@ -585,7 +597,9 @@ footer {
   }
   .toggle-button {
     display: flex;
+    height: 60px;
   }
+
   .filters-wrapper h2 {
     padding-left: var(--padding-small);
     padding-top: var(--padding-small);
