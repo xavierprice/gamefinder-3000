@@ -5,7 +5,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const app = express();
 const fetchGames = require("./fetchGames");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // Parse JSON bodies
 app.use(express.json());
@@ -57,6 +57,6 @@ app.post("/api/games", async (req, res) => {
 });
 
 // Start server
-// app.listen(PORT, () => {
-//   console.log(`Server is running on http://localhost:${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
