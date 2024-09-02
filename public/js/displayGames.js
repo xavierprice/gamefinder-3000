@@ -73,7 +73,7 @@ export function displayGames(games) {
     // Cover Art
     const coverArt = document.createElement("img");
     coverArt.classList.add("card-cover-art");
-    coverArt.src = game.cover ? game.cover.url : "/public/assets/default-cover.jpg";
+    coverArt.src = game.cover ? game.cover.url : "./public/assets/default-cover.jpg";
     coverArt.alt = "Game Cover Art";
 
     // Summary
