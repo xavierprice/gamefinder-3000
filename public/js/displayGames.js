@@ -2,7 +2,7 @@ export function displayGames(games) {
   const gamesList = document.getElementById("games-list");
   const loading = document.getElementById("loading-container");
 
-  const defaultCover = "../assets/default-cover.jpg";
+  const defaultCover = "public/assets/default-cover.jpg";
 
   loading.classList.add("hidden");
   document.body.classList.remove("loading");
