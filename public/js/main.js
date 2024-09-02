@@ -132,6 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleButtonFilters.addEventListener("click", () => {
     filtersWrapper.classList.toggle("visible");
     arrowFilters.classList.toggle("rotated");
+    if (filtersWrapper.classList.contains("visible")) {
+      filtersWrapper.scrollTop = 0;
+    }
   });
 
   // Function to close filters
