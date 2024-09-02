@@ -251,13 +251,16 @@ document.addEventListener("DOMContentLoaded", () => {
       closeFilterContainer();
 
       // Send client request to server
-      const response = await fetch("http://localhost:5501/api/games", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://gamefinder-3000-server.onrender.com/api/games",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         const games = await response.json();
