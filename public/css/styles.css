@@ -441,6 +441,10 @@ select {
 .content ul#games-list {
   gap: var(--padding-small);
   padding: var(--padding-medium);
+  max-height: 100%;
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow-y: scroll;
 }
 
 .card li {

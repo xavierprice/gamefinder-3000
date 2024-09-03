@@ -93,28 +93,47 @@ document.addEventListener("DOMContentLoaded", () => {
   let ratingValue = "any";
   let sortByValue = "name";
 
+  const gamesList = document.getElementById("games-list");
+
+  // Scroll to top of games-list
+  function scrollToTop() {
+    if (gamesList) {
+      gamesList.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }
+
+  function closeFiltersIfVisible() {
+    if (filtersWrapper.classList.contains("visible")) {
+      closeFilterContainer();
+    }
+  }
+
+  sortByOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      scrollToTop();
+      closeFiltersIfVisible();
+    });
+  });
+
   ratingOptions.forEach((option) => {
     option.addEventListener("click", function () {
-      // Remove selected class from all options
       ratingOptions.forEach((opt) => opt.classList.remove("selected"));
 
-      // Add selected class to the clicked option
       this.classList.add("selected");
 
-      // Handle the selected rating value
       ratingValue = this.getAttribute("data-value");
     });
   });
 
   sortByOptions.forEach((option) => {
     option.addEventListener("click", function () {
-      // Remove selected class from all options
       sortByOptions.forEach((opt) => opt.classList.remove("selected"));
 
-      // Add selected class to the clicked option
       this.classList.add("selected");
 
-      // Handle the selected sortBy value
       sortByValue = this.getAttribute("data-value");
     });
   });
@@ -137,13 +156,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Function to close filters
   const closeFilterContainer = () => {
     filtersWrapper.classList.remove("visible");
     arrowFilters.classList.remove("rotated");
   };
 
-  // Close filters when clicking outside of it
   document.body.addEventListener("click", (event) => {
     if (
       !filtersWrapper.contains(event.target) &&
@@ -153,16 +170,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Close filters when scrolling
   function addScrollListener() {
     document.addEventListener("scroll", closeFilterContainer);
   }
-  // Disable scrolling on smaller screens
+
   function removeScrollListener() {
     document.removeEventListener("scroll", closeFilterContainer);
   }
 
-  // Handle scrolling on different screen sizes
   function handleScrollListener() {
     if (window.innerWidth > 492) {
       addScrollListener();
@@ -171,10 +186,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Initial check on page load
   handleScrollListener();
 
-  // Listen for window resize events to re-evaluate the screen size
   window.addEventListener("resize", handleScrollListener);
 
   // Filter Order
@@ -183,26 +196,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentOrder = "ascending";
 
-  // Function to set currentOrder while gamesList is not visible
   function handleClick(event) {
     ascending.classList.remove("selected");
     descending.classList.remove("selected");
     event.target.classList.add("selected");
     if (event.target === ascending) {
       currentOrder = "ascending";
+      scrollToTop();
+      closeFilterContainer();
     } else {
       currentOrder = "descending";
+      scrollToTop();
+      closeFilterContainer();
     }
   }
 
-  // Hit enter on search bar to list games
   const searchBar = document.getElementById("search-bar");
   const submitButton = document.getElementById("submit-button");
 
   searchBar.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      submitButton.click(); 
+      submitButton.click();
     }
   });
 
@@ -220,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const clearFiltersButton = document.getElementById("clear-filters-button");
   clearFiltersButton.addEventListener("click", function () {
-    // Reset filter values to defaults
     // Search
     document.getElementById("search-bar").value = "";
     // Genre
@@ -268,10 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
       loading.classList.remove("hidden");
       document.body.classList.add("loading");
 
-      // Construct object to pass through to server
       let data = { search: searchValue };
 
-      // Parse values if selected
       if (ratingValue !== "any") {
         data.rating = parseInt(ratingValue);
       }
@@ -305,12 +317,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // development purposes
         console.log("Success", games);
         console.log(currentOrder);
-        // Initial sort
+
         let criteria = sortByValue;
         let order = currentOrder;
         const sortedGames = sortGames(games, criteria, order);
         displayGames(sortedGames);
-        // Sort on change
+
         document
           .querySelectorAll("#sortBy .sort-by-option")
           .forEach((button) => {
@@ -358,10 +370,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       console.error("Error:", error);
-      // Declare loading page and add hidden class
+
       const loading = document.getElementById("loading-container");
       loading.classList.add("hidden");
-      // Display server down message if server is down
+
       const serverDownMessage = document.getElementById("server-down");
       serverDownMessage.classList.remove("hidden");
     }
