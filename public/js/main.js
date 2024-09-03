@@ -111,13 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  sortByOptions.forEach((option) => {
-    option.addEventListener("click", () => {
-      scrollToTop();
-      closeFiltersIfVisible();
-    });
-  });
-
   ratingOptions.forEach((option) => {
     option.addEventListener("click", function () {
       ratingOptions.forEach((opt) => opt.classList.remove("selected"));
@@ -232,6 +225,16 @@ document.addEventListener("DOMContentLoaded", () => {
       .getElementById("descending")
       .classList.toggle("selected", currentOrder === "descending");
   }
+
+  sortByOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      scrollToTop();
+      closeFiltersIfVisible();
+      currentOrder = "ascending";
+      ascending.classList.add("selected");
+      descending.classList.remove("selected");
+    });
+  });
 
   const clearFiltersButton = document.getElementById("clear-filters-button");
   clearFiltersButton.addEventListener("click", function () {
