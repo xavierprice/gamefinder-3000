@@ -315,8 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const games = await response.json();
         checkArray(games);
         // development purposes
-        console.log("Success", games);
-        console.log(currentOrder);
+        // console.log("Success", games);
 
         let criteria = sortByValue;
         let order = currentOrder;
