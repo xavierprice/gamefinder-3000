@@ -1,6 +1,7 @@
 # modules
 node_modules
 package-lock.json
+.DS_Store
 
 # Environment variables
 .env
