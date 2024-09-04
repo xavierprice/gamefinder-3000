@@ -214,6 +214,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const selects = document.querySelectorAll("select");
+
+  selects.forEach((select) => {
+    select.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        submitButton.click();
+      }
+    });
+  });
+
+  document.querySelectorAll(".rating-option").forEach((button) => {
+    button.addEventListener("click", function () {
+      this.focus();
+    });
+
+    button.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        submitButton.click();
+      }
+    });
+  });
+
   ascending.addEventListener("click", handleClick);
   descending.addEventListener("click", handleClick);
 
