@@ -72,6 +72,10 @@ h1 {
 #home-page.hidden,
 #games-list.hidden,
 #loading-container.hidden,
+#initial-message.hidden,
+#additional-message.hidden,
+#another-additional-message.hidden,
+#final-message.hidden,
 #empty-array.hidden,
 #server-down.hidden {
   display: none;
@@ -86,6 +90,7 @@ h1 {
   top: 0;
   left: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: var(--font-size-h2);
@@ -93,9 +98,22 @@ h1 {
   background-color: var(--color-transparent);
 }
 
-#loading-container .loading-text {
+#loading-container .loading-text,
+#loading-message {
   display: flex;
   margin-left: calc(301px + var(--padding-medium));
+}
+
+#loading-message p {
+  text-align: center;
+  padding-right: var(--padding-small);
+  font-size: var(--font-size-base);
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-half);
 }
 
 @keyframes dotAnimation {
@@ -591,6 +609,9 @@ textarea {
   /* Loading container  */
   #loading-container .loading-text {
     margin-left: 0;
+  }
+  #loading-message {
+    margin-left: var(--padding-small);
   }
   /* Filter container  */
   .filter-container {

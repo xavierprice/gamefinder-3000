@@ -118,8 +118,8 @@
           <span id="arrow-filters">&#9660;</span>
         </button>
       </section>
-      <section class="content">
-        <div class="home-page" id="home-page">
+      <main class="content">
+        <section class="home-page" id="home-page">
           <h1>Welcome to the Gamefinder 3000</h1>
           <p>
             The ultimate tool for uncovering the perfect game to match your
@@ -128,27 +128,43 @@
             platform and more. Gamefinder helps you explore and find new games
             that you'll love.
           </p>
-        </div>
-        <div id="loading-container" class="hidden">
+        </section>
+        <section id="loading-container" class="hidden">
           <div class="loading-text">
             <h1>Loading</h1>
             <h2>.</h2>
             <h2>.</h2>
             <h2>.</h2>
           </div>
-        </div>
-        <div id="empty-array" class="hidden">
+          <div id="loading-message">
+            <div class="message-container">
+              <div id="initial-message" class="hidden">
+                <p>
+                  Ah, you seem to have woken me up from my nap. give me a minute
+                  or two so I can fetch your request!
+                </p>
+              </div>
+              <div id="additional-message" class="hidden">
+                <p>
+                  (the server takes a little longer for the initial request,
+                  your patience is appreciated)
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="empty-array" class="hidden">
           <h1>Uh oh!</h1>
           <h2>We couldn't find what you were looking for.</h2>
           <h2>Please try something else :]</h2>
-        </div>
-        <div id="server-down" class="hidden">
+        </section>
+        <section id="server-down" class="hidden">
           <h1>Uh oh!</h1>
           <h2>Server is currently down.</h2>
           <h2>Please try later :]</h2>
-        </div>
+        </section>
         <ul id="games-list" class="hidden"></ul>
-      </section>
+      </main>
     </main>
 
     <script type="module" src="public/js/main.js"></script>

@@ -301,12 +301,27 @@ document.addEventListener("DOMContentLoaded", () => {
       let platformValue = document.getElementById("platform-select").value;
       let gameModeValue = document.getElementById("game-mode-select").value;
       const loading = document.getElementById("loading-container");
+      const loadingMessage = document.getElementById("initial-message");
+      const additionalMessage = document.getElementById("additional-message");
+      const anotherMessage = document.getElementById(
+        "another-additional-message"
+      );
+      const finalMessage = document.getElementById("final-message");
       const homePage = document.getElementById("home-page");
       const serverDownMessage = document.getElementById("server-down");
 
       serverDownMessage.classList.add("hidden");
       homePage.classList.add("hidden");
       loading.classList.remove("hidden");
+
+      const initialTimeout = setTimeout(() => {
+        loadingMessage.classList.remove("hidden");
+
+        setTimeout(() => {
+          additionalMessage.classList.remove("hidden");
+        }, 10000); // Second message
+      }, 5000); // First message
+
       document.body.classList.add("loading");
 
       let data = { search: searchValue };
@@ -391,14 +406,15 @@ document.addEventListener("DOMContentLoaded", () => {
           top: 0,
           behavior: "instant",
         });
+        clearTimeout(initialTimeout);
       } else {
         console.error("Request failed");
       }
     } catch (error) {
       console.error("Error:", error);
 
-      const loading = document.getElementById("loading-container");
       loading.classList.add("hidden");
+      loadingMessage.classList.add("hidden");
 
       const serverDownMessage = document.getElementById("server-down");
       serverDownMessage.classList.remove("hidden");
