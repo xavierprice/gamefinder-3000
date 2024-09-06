@@ -303,10 +303,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const loading = document.getElementById("loading-container");
       const loadingMessage = document.getElementById("initial-message");
       const additionalMessage = document.getElementById("additional-message");
-      const anotherMessage = document.getElementById(
-        "another-additional-message"
-      );
-      const finalMessage = document.getElementById("final-message");
+      // const anotherMessage = document.getElementById(
+      //   "another-additional-message"
+      // );
+      // const finalMessage = document.getElementById("final-message");
       const homePage = document.getElementById("home-page");
       const serverDownMessage = document.getElementById("server-down");
 
@@ -407,6 +407,9 @@ document.addEventListener("DOMContentLoaded", () => {
           behavior: "instant",
         });
         clearTimeout(initialTimeout);
+        loading.classList.add("hidden");
+        loadingMessage.classList.add("hidden");
+        additionalMessage.classList.add("hidden");
       } else {
         console.error("Request failed");
       }
@@ -415,6 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loading.classList.add("hidden");
       loadingMessage.classList.add("hidden");
+      additionalMessage.classList.add("hidden");
 
       const serverDownMessage = document.getElementById("server-down");
       serverDownMessage.classList.remove("hidden");
