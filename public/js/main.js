@@ -294,15 +294,16 @@ document.addEventListener("DOMContentLoaded", () => {
     currentOrder = "ascending";
   });
 
+  const loading = document.getElementById("loading-container");
+  const loadingMessage = document.getElementById("initial-message");
+  const additionalMessage = document.getElementById("additional-message");
+
   submitButton.addEventListener("click", async () => {
     try {
       const searchValue = document.getElementById("search-bar").value;
       let genreValue = document.getElementById("genre-select").value;
       let platformValue = document.getElementById("platform-select").value;
       let gameModeValue = document.getElementById("game-mode-select").value;
-      const loading = document.getElementById("loading-container");
-      const loadingMessage = document.getElementById("initial-message");
-      const additionalMessage = document.getElementById("additional-message");
       // const anotherMessage = document.getElementById(
       //   "another-additional-message"
       // );
